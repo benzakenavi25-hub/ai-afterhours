@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1A1A2E">
+  <meta name="robots" content="noindex">
+  <title>הדמו בדרך — AI AfterHours</title>
+  <meta name="description" content="הפרטים התקבלו. בחרו שעה לדמו של 15 דקות.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Inter:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">דילוג לתוכן</a>
+  <header class="nav">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14.5v-3M8 17V7M12 20V4M16 17V7M20 14.5v-3" stroke="#4ECDC4" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <span>AI After<b>Hours</b></span>
+      </a>
+      <nav aria-label="ראשי">
+        <ul class="nav-links">
+          <li><a href="index.html#how">איך זה עובד</a></li>
+          <li><a href="index.html#hero">הדגמה</a></li>
+          <li><a href="pricing.html">תמחור</a></li>
+          <li><a href="index.html#faq">שאלות</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm nav-cta" href="#calendar">בחר שעה לדמו</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="תפריט">
+        <svg class="icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="site-menu">
+    <ul>
+      <li><a href="index.html#how">איך זה עובד</a></li>
+      <li><a href="index.html#hero">הדגמה</a></li>
+      <li><a href="pricing.html">תמחור</a></li>
+      <li><a href="index.html#faq">שאלות</a></li>
+    </ul>
+  </div>
+
+  <main id="main">
+    <header class="thanks-hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <svg class="check-anim" viewBox="0 0 96 96" aria-hidden="true">
+          <circle cx="48" cy="48" r="46"/>
+          <path d="M30 50.5 43 63 66 36"/>
+        </svg>
+        <h1>הדמו בדרך<span data-name></span></h1>
+        <p>הפרטים אצלנו. עכשיו בוחרים שעה: 15 דקות, בלי מצגת, על התסריט של העסק שלכם.</p>
+      </div>
+    </header>
+
+    <section class="section flush" id="calendar">
+      <div class="container">
+        <div class="calendly-frame" data-cal>
+          <div class="cal-side">
+            <p class="eyebrow">15 דקות</p>
+            <h2>דמו על העסק שלכם</h2>
+            <ul>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>שיחה קצרה, בלי מצגת</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>תסריט מהתחום שלכם</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>זימון למייל העסקי</li>
+            </ul>
+          </div>
+          <div class="cal-main">
+            <h3>בחרו יום ושעה</h3>
+            <div class="cal-days" role="group" aria-label="ימים פנויים"></div>
+            <div class="cal-slots" role="group" aria-label="שעות פנויות"></div>
+            <div class="cal-confirm">
+              <button type="button" class="btn btn-primary" data-confirm disabled>בחר שעה לדמו</button>
+              <span data-summary aria-live="polite">בחרו יום ושעה</span>
+            </div>
+            <p class="cal-note">תחליף עיצובי ל-Calendly. באתר הסופי יוטמע הווידג'ט הרשמי, והזימון יישלח מהיומן.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section next-steps">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">מה קורה עכשיו</p>
+          <h2>שלושה צעדים, וזהו</h2>
+        </div>
+        <div class="cols-3">
+          <article class="card step">
+            <div class="step-num">01</div>
+            <h3>בוחרים שעה</h3>
+            <p>חלון של 15 דקות. אם השעה לא נוחה, אפשר לחזור ליומן אחר כך.</p>
+          </article>
+          <article class="card step">
+            <div class="step-num">02</div>
+            <h3>מגיע זימון למייל</h3>
+            <p>הזימון יישלח למייל העסקי שהשארתם, עם קישור לשיחה.</p>
+          </article>
+          <article class="card step">
+            <div class="step-num">03</div>
+            <h3>שומעים שיחה אמיתית</h3>
+            <p>לא מצגת. תסריט מהתחום שלכם, ואיך הליד נכנס ל-CRM.</p>
+          </article>
+        </div>
+        <div class="mid-cta">
+          <a class="btn btn-secondary" href="index.html">חזרה לעמוד הבית</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="logo" href="index.html">
+            <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14.5v-3M8 17V7M12 20V4M16 17V7M20 14.5v-3" stroke="#4ECDC4" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <span>AI After<b>Hours</b></span>
+          </a>
+          <p>מענה קולי בעברית מדוברת, בשעות שהעסק סגור. משלמים רק על שיחה שנענתה.</p>
+        </div>
+        <div>
+          <p class="foot-title">מוצר</p>
+          <ul>
+            <li><a href="index.html#how">איך זה עובד</a></li>
+            <li><a href="index.html#hero">שיחה לדוגמה</a></li>
+            <li><a href="pricing.html">תמחור</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="foot-title">התחלה</p>
+          <ul>
+            <li><a href="#calendar">בחר שעה לדמו</a></li>
+            <li><a href="index.html#faq">שאלות נפוצות</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="foot-title">משפטי</p>
+          <ul>
+            <li><a href="accessibility.html">הצהרת נגישות</a></li>
+            <li><a href="privacy.html">מדיניות פרטיות</a></li>
+            <li><a href="terms.html">תנאי שימוש</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="caption">© <span data-year>2026</span> AI AfterHours. כל הזכויות שמורות.</p>
+        <div class="lang-switch" role="group" aria-label="בחירת שפה">
+          <button type="button" aria-pressed="true">עברית</button>
+          <button type="button" aria-pressed="false" disabled title="גרסת English בשלב 2">English</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="mobile-cta">
+    <a class="btn btn-primary btn-block" href="#calendar">בחר שעה לדמו</a>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

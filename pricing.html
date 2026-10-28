@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1A1A2E">
+  <meta name="robots" content="noindex">
+  <title>תמחור — AI AfterHours</title>
+  <meta name="description" content="דמי מערכת חודשיים, ותשלום בשקלים רק על שיחה שנענתה. המחיר לשיחה יורד ככל שהנפח עולה.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Inter:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "he",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "מה נחשבת שיחה שנענתה?",
+        "acceptedAnswer": { "@type": "Answer", "text": "שיחה שהמערכת הרימה וניהלה עד סיום או עד העברה לצוות. שיחה שנותקה לפני מענה לא מחויבת." }
+      },
+      {
+        "@type": "Question",
+        "name": "יש התחייבות שנתית?",
+        "acceptedAnswer": { "@type": "Answer", "text": "לא במודל שמוצג כאן. התוכנית חודשית, ואפשר לעבור בין מסלולים. התנאים הסופיים ייקבעו בהסכם." }
+      },
+      {
+        "@type": "Question",
+        "name": "המספרים בעמוד סופיים?",
+        "acceptedAnswer": { "@type": "Answer", "text": "לא. הכרטיסים והמחשבון ממחישים את המודל: דמי מערכת, ומחיר לשיחה שיורד ככל שהנפח עולה. המחיר הסופי ממתין לאישור." }
+      },
+      {
+        "@type": "Question",
+        "name": "אפשר לחבר יותר מ-CRM אחד?",
+        "acceptedAnswer": { "@type": "Answer", "text": "ב-Starter חיבור אחד. ב-Growth שלושה. ב-Scale לפי הצורך." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">דילוג לתוכן</a>
+  <header class="nav">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14.5v-3M8 17V7M12 20V4M16 17V7M20 14.5v-3" stroke="#4ECDC4" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <span>AI After<b>Hours</b></span>
+      </a>
+      <nav aria-label="ראשי">
+        <ul class="nav-links">
+          <li><a href="index.html#how">איך זה עובד</a></li>
+          <li><a href="index.html#hero">הדגמה</a></li>
+          <li><a href="pricing.html" aria-current="page">תמחור</a></li>
+          <li><a href="#faq">שאלות</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm nav-cta" href="#demo">הזמן דמו של 15 דקות</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="תפריט">
+        <svg class="icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="site-menu">
+    <ul>
+      <li><a href="index.html#how">איך זה עובד</a></li>
+      <li><a href="index.html#hero">הדגמה</a></li>
+      <li><a href="pricing.html">תמחור</a></li>
+      <li><a href="#faq">שאלות</a></li>
+    </ul>
+  </div>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="dot-grid" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <p class="eyebrow">תמחור</p>
+        <h1>משלמים רק על שיחה <span class="text-grad">שנענתה</span></h1>
+        <p>דמי מערכת חודשיים, ומחיר בשקלים לכל שיחה שהבוט באמת ענה לה. ככל שיש יותר שיחות, המחיר לשיחה יורד.</p>
+        <p class="highlight-pill">שיחה שלא נענתה לא מחויבת</p>
+        <p class="caption">המחירים בעמוד הם טיוטה להמחשת המודל, עד לאישור מבנה התמחור.</p>
+      </div>
+    </header>
+
+    <section class="section flush" id="plans">
+      <div class="container">
+        <div class="cols-3 plans">
+          <article class="card plan hoverable">
+            <h2>Starter</h2>
+            <p>לעסק עם נפח קטן, שרוצה מענה אחרי שעות בלי מערכת כבדה.</p>
+            <div class="price"><span class="big-num">₪4.90</span><span class="per">לשיחה שנענתה</span></div>
+            <p class="base"><span class="ltr">+ ₪149</span> דמי מערכת לחודש · עד 150 שיחות</p>
+            <ul>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>מענה בערב, בסופ״ש ובחג</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>עברית מדוברת, כולל סלנג</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>תמליל, סיכום וקביעת תור</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>חיבור CRM אחד</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>קו אחד · דוח חודשי קצר</span></li>
+            </ul>
+            <a class="btn btn-secondary btn-block" href="#demo">הזמן דמו של 15 דקות</a>
+          </article>
+          <article class="card plan featured hoverable">
+            <span class="tag badge-top">הכי מתאים לרוב העסקים</span>
+            <h2>Growth</h2>
+            <p>לעסק שהשיחות כבר חלק מהיום-יום, וצריך כמה חיבורים ותסריט משלו.</p>
+            <div class="price"><span class="big-num">₪3.90</span><span class="per">לשיחה שנענתה</span></div>
+            <p class="base"><span class="ltr">+ ₪349</span> דמי מערכת לחודש · עד 600 שיחות</p>
+            <ul>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>כל מה שב-Starter</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>שלושה חיבורי CRM</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>תסריט מותאם לתחום</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>שלושה קווים</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>סיווג ליד ו-SMS אישור</span></li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="#demo">הזמן דמו של 15 דקות</a>
+          </article>
+          <article class="card plan hoverable">
+            <h2>Scale</h2>
+            <p>לנפח גבוה, לכמה קווים, ולמי שרוצה אדם אחד מול AfterHours.</p>
+            <div class="price"><span class="big-num">₪2.90</span><span class="per">לשיחה שנענתה</span></div>
+            <p class="base"><span class="ltr">+ ₪790</span> דמי מערכת לחודש · מעל 600 שיחות</p>
+            <ul>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>כל מה שב-Growth</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>חיבורים ומספר קווים לפי הצורך</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>תסריטים לכמה צוותים</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>מנהל לקוח</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>הסכם שירות לפי היקף</span></li>
+            </ul>
+            <a class="btn btn-secondary btn-block" href="#demo">הזמן דמו של 15 דקות</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="calculator">
+      <div class="container">
+        <div class="calc" data-calc>
+          <div>
+            <p class="eyebrow">מחשבון</p>
+            <h2>כמה זה יוצא בחודש</h2>
+            <p class="muted lead">גררו לפי נפח השיחות שנענו. החישוב: דמי מערכת, ועוד מחיר לשיחה. המסלול מתחלף לפי הנפח.</p>
+            <div class="calc-head">
+              <label for="calls">כמה שיחות בחודש</label>
+              <output for="calls">300</output>
+            </div>
+            <input class="range" id="calls" type="range" min="50" max="1500" step="10" value="300" aria-describedby="calc-note">
+            <div class="range-scale"><span>50</span><span>1,500</span></div>
+            <p class="caption note-gap" id="calc-note">טיוטה. המספרים יתעדכנו אחרי אישור התמחור. מה שקבוע: לא משלמים על שיחה שלא נענתה.</p>
+          </div>
+          <div class="calc-result" aria-live="polite">
+            <div class="calc-row"><span>תוכנית</span><span class="val" data-plan>Growth</span></div>
+            <div class="calc-row"><span>מחיר לשיחה</span><span class="val" data-per>₪3.90</span></div>
+            <div class="calc-row"><span>דמי מערכת</span><span class="val" data-base>₪349</span></div>
+            <div class="calc-row total"><span>סה״כ לחודש</span><span class="val" data-total>₪1,519</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="compare">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">השוואה</p>
+          <h2>מה נכנס לכל מסלול</h2>
+        </div>
+        <p class="caption scroll-hint">אפשר לגלול את הטבלה לצדדים</p>
+        <div class="compare-wrap" tabindex="0" aria-label="טבלת השוואת מסלולים">
+          <table class="compare">
+            <thead>
+              <tr>
+                <th scope="col">מה כלול</th>
+                <th scope="col">Starter</th>
+                <th scope="col" class="hl">Growth</th>
+                <th scope="col">Scale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">מחיר לשיחה שנענתה</th>
+                <td><span class="ltr">₪4.90</span></td>
+                <td class="hl"><span class="ltr">₪3.90</span></td>
+                <td><span class="ltr">₪2.90</span></td>
+              </tr>
+              <tr>
+                <th scope="row">דמי מערכת לחודש</th>
+                <td><span class="ltr">₪149</span></td>
+                <td class="hl"><span class="ltr">₪349</span></td>
+                <td><span class="ltr">₪790</span></td>
+              </tr>
+              <tr>
+                <th scope="row">מענה בערב, בסופ״ש ובחג</th>
+                <td><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+                <td class="hl"><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+                <td><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+              </tr>
+              <tr>
+                <th scope="row">עברית מדוברת וסלנג</th>
+                <td><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+                <td class="hl"><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+                <td><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+              </tr>
+              <tr>
+                <th scope="row">תמליל וקביעת תור</th>
+                <td><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+                <td class="hl"><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+                <td><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+              </tr>
+              <tr>
+                <th scope="row">תשלום רק על שיחה שנענתה</th>
+                <td><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+                <td class="hl"><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+                <td><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+              </tr>
+              <tr>
+                <th scope="row">חיבורי CRM</th>
+                <td>1</td>
+                <td class="hl">3</td>
+                <td>לפי הצורך</td>
+              </tr>
+              <tr>
+                <th scope="row">תסריט מותאם לתחום</th>
+                <td><span class="no" aria-hidden="true">—</span><span class="sr-only">לא כלול</span></td>
+                <td class="hl"><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+                <td><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+              </tr>
+              <tr>
+                <th scope="row">מספר קווים</th>
+                <td>1</td>
+                <td class="hl">3</td>
+                <td>לפי הצורך</td>
+              </tr>
+              <tr>
+                <th scope="row">מנהל לקוח</th>
+                <td><span class="no" aria-hidden="true">—</span><span class="sr-only">לא כלול</span></td>
+                <td class="hl"><span class="no" aria-hidden="true">—</span><span class="sr-only">לא כלול</span></td>
+                <td><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+              </tr>
+              <tr>
+                <th scope="row">דוח חודשי קצר</th>
+                <td><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+                <td class="hl"><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+                <td><span class="yes" aria-hidden="true">✓</span><span class="sr-only">כלול</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="faq">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">שאלות על המחיר</p>
+          <h2>בלי אותיות קטנות על השיחה</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>מה נחשבת שיחה שנענתה? <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="answer">שיחה שהמערכת הרימה וניהלה עד סיום או עד העברה לצוות. שיחה שנותקה לפני מענה לא מחויבת.</div>
+          </details>
+          <details>
+            <summary>יש התחייבות שנתית? <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="answer">לא במודל שמוצג כאן. התוכנית חודשית, ואפשר לעבור בין מסלולים. התנאים הסופיים ייקבעו בהסכם.</div>
+          </details>
+          <details>
+            <summary>המספרים בעמוד סופיים? <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="answer">לא. הכרטיסים והמחשבון ממחישים את המודל: דמי מערכת, ומחיר לשיחה שיורד ככל שהנפח עולה. המחיר הסופי ממתין לאישור.</div>
+          </details>
+          <details>
+            <summary>אפשר לחבר יותר מ-CRM אחד? <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="answer">ב-Starter חיבור אחד. ב-Growth שלושה. ב-Scale לפי הצורך.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section closing" id="demo">
+      <div class="dot-grid" aria-hidden="true"></div>
+      <div class="container">
+        <div class="closing-box">
+          <div>
+            <p class="eyebrow">15 דקות</p>
+            <h2>נחשב את זה על המספרים שלכם</h2>
+            <p class="muted">בדמו נבין כמה שיחות באמת נופלות אחרי שעות, ואיזה מסלול הגיוני. בלי התחייבות.</p>
+            <ul class="closing-list">
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>המחיר הסופי רק אחרי השיחה</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>אפשר לשמוע שיחה מהתחום שלכם</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>מייל עסקי בלבד</li>
+            </ul>
+          </div>
+          <form class="form-card" data-demo-form novalidate>
+            <div class="form-progress">
+              <span data-step-label aria-live="polite">שלב 1 מתוך 2</span>
+              <span class="bar" aria-hidden="true"><i></i></span>
+            </div>
+            <div class="form-step">
+              <div class="field">
+                <label for="name">שם מלא</label>
+                <input id="name" name="name" required autocomplete="name" placeholder="דנה לוי" aria-describedby="name-error">
+                <span class="error" id="name-error" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="email">אימייל עסקי</label>
+                <input id="email" name="email" type="email" required dir="ltr" autocomplete="email" placeholder="name@company.co.il" aria-describedby="email-hint email-error">
+                <span class="caption" id="email-hint">Gmail, Yahoo ו-Walla לא מתקבלים</span>
+                <span class="error" id="email-error" role="alert"></span>
+              </div>
+              <button type="button" class="btn btn-primary btn-block" data-next>המשך</button>
+            </div>
+            <div class="form-step" hidden>
+              <div class="field">
+                <label for="phone">טלפון</label>
+                <input id="phone" name="phone" type="tel" required dir="ltr" inputmode="tel" autocomplete="tel" placeholder="050-0000000" aria-describedby="phone-error">
+                <span class="error" id="phone-error" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="company">שם העסק</label>
+                <input id="company" name="company" required autocomplete="organization" aria-describedby="company-error">
+                <span class="error" id="company-error" role="alert"></span>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="industry">תחום</label>
+                  <select id="industry" name="industry" required aria-describedby="industry-error">
+                    <option value="" selected disabled>בחרו תחום</option>
+                    <option>מוסך ורכב</option>
+                    <option>מרפאה וקליניקה</option>
+                    <option>נדל״ן</option>
+                    <option>שירות ושטח</option>
+                    <option>אחר</option>
+                  </select>
+                  <span class="error" id="industry-error" role="alert"></span>
+                </div>
+                <div class="field">
+                  <label for="volume">שיחות בחודש</label>
+                  <select id="volume" name="volume" required aria-describedby="volume-error">
+                    <option value="" selected disabled>בחרו טווח</option>
+                    <option>עד 150</option>
+                    <option>150 עד 600</option>
+                    <option>מעל 600</option>
+                    <option>עוד לא יודעים</option>
+                  </select>
+                  <span class="error" id="volume-error" role="alert"></span>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn btn-secondary" data-back>חזרה</button>
+                <button type="submit" class="btn btn-primary">הזמן דמו של 15 דקות</button>
+              </div>
+            </div>
+            <p class="form-note">15 דקות. בלי התחייבות ובלי רשימת תפוצה.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="logo" href="index.html">
+            <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14.5v-3M8 17V7M12 20V4M16 17V7M20 14.5v-3" stroke="#4ECDC4" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <span>AI After<b>Hours</b></span>
+          </a>
+          <p>מענה קולי בעברית מדוברת, בשעות שהעסק סגור. משלמים רק על שיחה שנענתה.</p>
+        </div>
+        <div>
+          <p class="foot-title">מוצר</p>
+          <ul>
+            <li><a href="index.html#how">איך זה עובד</a></li>
+            <li><a href="index.html#hero">שיחה לדוגמה</a></li>
+            <li><a href="pricing.html" aria-current="page">תמחור</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="foot-title">התחלה</p>
+          <ul>
+            <li><a href="#demo">הזמן דמו של 15 דקות</a></li>
+            <li><a href="#faq">שאלות על המחיר</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="foot-title">משפטי</p>
+          <ul>
+            <li><a href="accessibility.html">הצהרת נגישות</a></li>
+            <li><a href="privacy.html">מדיניות פרטיות</a></li>
+            <li><a href="terms.html">תנאי שימוש</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="caption">© <span data-year>2026</span> AI AfterHours. כל הזכויות שמורות.</p>
+        <div class="lang-switch" role="group" aria-label="בחירת שפה">
+          <button type="button" aria-pressed="true">עברית</button>
+          <button type="button" aria-pressed="false" disabled title="גרסת English בשלב 2">English</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="mobile-cta">
+    <a class="btn btn-primary btn-block" href="#demo">הזמן דמו של 15 דקות</a>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
