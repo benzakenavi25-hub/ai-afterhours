@@ -95,6 +95,50 @@
     document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
   }
 
+  const mobileCta = document.querySelector(".mobile-cta");
+  const heroSection = document.querySelector(".hero");
+  const mobileQuery = window.matchMedia("(max-width: 768px)");
+  if (mobileCta && heroSection && "IntersectionObserver" in window) {
+    const syncBar = () => {
+      if (!mobileQuery.matches) {
+        mobileCta.classList.remove("is-on");
+        document.body.classList.remove("has-mobile-cta");
+      }
+    };
+    const barIo = new IntersectionObserver((entries) => {
+      if (!mobileQuery.matches) return;
+      const on = !entries[0].isIntersecting;
+      mobileCta.classList.toggle("is-on", on);
+      document.body.classList.toggle("has-mobile-cta", on);
+    }, { threshold: 0 });
+    barIo.observe(heroSection);
+    mobileQuery.addEventListener("change", syncBar);
+  }
+
+  /* ---------- Hero orb tilt ---------- */
+  const heroEl = document.querySelector(".home-frame") || document.querySelector(".hero");
+  if (heroEl && !reduceMotion && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    let raf = 0;
+    let mx = 0;
+    let my = 0;
+    const paint = () => {
+      heroEl.style.setProperty("--mx", mx.toFixed(4));
+      heroEl.style.setProperty("--my", my.toFixed(4));
+      raf = 0;
+    };
+    heroEl.addEventListener("mousemove", (e) => {
+      const r = heroEl.getBoundingClientRect();
+      mx = (e.clientX - r.left) / r.width - 0.5;
+      my = (e.clientY - r.top) / r.height - 0.5;
+      if (!raf) raf = requestAnimationFrame(paint);
+    });
+    heroEl.addEventListener("mouseleave", () => {
+      mx = 0;
+      my = 0;
+      if (!raf) raf = requestAnimationFrame(paint);
+    });
+  }
+
   /* ---------- Parallax glow ---------- */
   const glows = document.querySelectorAll(".hero-glow");
   if (glows.length && !reduceMotion) {
@@ -495,7 +539,7 @@
     const pillars = [...root.querySelectorAll("[data-pillar]")];
     const headline = root.querySelector("[data-pillars-center]");
     const hint = root.querySelector("[data-pillars-hint]");
-    const mq = window.matchMedia("(max-width: 767px)");
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const from = [
       { x: 0, y: -48 },
       { x: 56, y: 0 },
@@ -555,36 +599,25 @@
       });
     };
 
-    const renderMobile = (el) => {
-      const rect = el.getBoundingClientRect();
-      const start = window.innerHeight * 0.85;
-      const end = window.innerHeight * 0.45;
-      const show = span(1 - (rect.top - end) / (start - end), 0, 1);
-      setPillar(el, show, 0, 36 * (1 - show), 0, 0);
-    };
-
     let ticking = false;
     const onScroll = () => {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        if (mq.matches) pillars.forEach(renderMobile);
-        else renderPin();
+        if (mq.matches) {
+          pillars.forEach((el, i) => setPillar(el, 1, 0, 0, drift[i].x, drift[i].y));
+          if (headline) headline.style.setProperty("--scale", "1");
+          if (hint) hint.classList.remove("is-gone");
+        } else {
+          renderPin();
+        }
         ticking = false;
       });
     };
 
-    const resetMobileHeadline = () => {
-      if (headline) headline.style.setProperty("--scale", "1");
-      if (hint) hint.classList.remove("is-gone");
-    };
-
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
-    mq.addEventListener("change", () => {
-      if (mq.matches) resetMobileHeadline();
-      onScroll();
-    });
+    mq.addEventListener("change", onScroll);
     onScroll();
   }
 })();

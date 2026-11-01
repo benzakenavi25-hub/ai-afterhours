@@ -78,6 +78,8 @@
 <body>
   <a class="skip-link" href="#main">דילוג לתוכן</a>
 
+  <main id="main">
+  <div class="home-frame">
   <header class="nav">
     <div class="container">
       <a class="logo" href="index.html">
@@ -88,7 +90,7 @@
         <ul class="nav-links">
           <li><a href="#how">איך זה עובד</a></li>
           <li><a href="#hero">הדגמה</a></li>
-          <li><a href="pricing.html">תמחור</a></li>
+          <li><a href="#pricing">תמחור</a></li>
           <li><a href="#faq">שאלות</a></li>
         </ul>
       </nav>
@@ -103,245 +105,89 @@
     <ul>
       <li><a href="#how">איך זה עובד</a></li>
       <li><a href="#hero">הדגמה</a></li>
-      <li><a href="pricing.html">תמחור</a></li>
+      <li><a href="#pricing">תמחור</a></li>
       <li><a href="#faq">שאלות</a></li>
     </ul>
   </div>
 
-  <main id="main">
-    <section class="hero" id="hero">
-      <div class="hero-circuit" aria-hidden="true">
-        <div class="hero-glow"></div>
-        <svg class="circuit-svg" viewBox="0 0 1440 860" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="traceA" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#d7b6ff"/>
-              <stop offset="45%" stop-color="#7ec8ff"/>
-              <stop offset="100%" stop-color="#3d7dff"/>
-            </linearGradient>
-            <filter id="traceGlow" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="1.4" result="b"/>
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <g fill="none" stroke="url(#traceA)" stroke-linecap="round" stroke-linejoin="round" filter="url(#traceGlow)" opacity="0.9">
-            <path d="M247 254.1 L240.9 80.2" stroke-width="0.9"/>
-            <path d="M252.3 254 L256.6 94.7 L284.6 95.5 L259.3 -2.9" stroke-width="1.02"/>
-            <path d="M257.6 254.3 L276.4 59.4 L242.6 56.1 L287.9 -60" stroke-width="1.14"/>
-            <path d="M262.9 255 L302.4 59.7 L347.5 68.8 L326.6 -60" stroke-width="1.26"/>
-            <path d="M268.2 255.9 L375.1 -60" stroke-width="1.38"/>
-            <path d="M273.3 257.2 L372.4 60.5 L402.8 75.8 L433.2 -60" stroke-width="0.9"/>
-            <path d="M278.4 258.8 L416.1 61.1 L383.3 38.2 L500.5 -60" stroke-width="1.02"/>
-            <path d="M283.4 260.7 L465.2 61.9 L481.4 76.7 L576.6 -60" stroke-width="1.14"/>
-            <path d="M288.2 263 L376.3 85.6" stroke-width="1.26"/>
-            <path d="M292.9 265.5 L379.9 114.5 L414.6 134.5 L433.2 22" stroke-width="1.38"/>
-            <path d="M297.5 268.3 L422.1 80.1 L383.7 54.7 L498.4 -35.2" stroke-width="0.9"/>
-            <path d="M301.8 271.4 L468.8 65.9 L490.5 83.6 L571.1 -60" stroke-width="1.02"/>
-            <path d="M306 274.7 L650.9 -60" stroke-width="1.14"/>
-            <path d="M309.9 278.3 L574.6 68.6 L603.2 104.7 L736.9 -60" stroke-width="1.26"/>
-            <path d="M313.6 282.1 L632.8 70 L620.6 51.7 L828.4 -60" stroke-width="1.38"/>
-            <path d="M317.1 286.2 L693.8 71.6 L710.6 101.1 L924.6 -60" stroke-width="0.9"/>
-            <path d="M320.3 290.4 L501.7 162.5" stroke-width="1.02"/>
-            <path d="M323.2 294.9 L484.2 195.6 L495.7 214.3 L582.8 134.8" stroke-width="1.14"/>
-            <path d="M325.9 299.5 L538.1 186.2 L524.9 161.5 L668.1 116.7" stroke-width="1.26"/>
-            <path d="M328.2 304.3 L593.8 183 L610.4 219.4 L756.6 108.6" stroke-width="1.38"/>
-            <path d="M330.3 309.2 L847.5 110.6" stroke-width="0.9"/>
-            <path d="M332 314.2 L708.8 195.8 L717.2 222.5 L939.7 123.2" stroke-width="1.02"/>
-            <path d="M333.5 319.3 L766.8 212.1 L758.6 179.1 L1032.4 146.4" stroke-width="1.14"/>
-            <path d="M334.6 324.5 L824.3 235.1 L832.6 280.4 L1124.5 180.3" stroke-width="1.26"/>
-            <path d="M335.4 329.8 L579.7 300.7" stroke-width="1.38"/>
-            <path d="M335.9 335.1 L539.5 323.6 L541.4 357.5 L664.3 316.5" stroke-width="0.9"/>
-            <path d="M336 340.5 L591.4 341.8 L591.6 301.8 L748 342.6" stroke-width="1.02"/>
-            <path d="M335.8 345.8 L642 366.4 L640.5 388.4 L829.7 379" stroke-width="1.14"/>
-            <path d="M335.3 351.1 L908.5 425.5" stroke-width="1.26"/>
-            <path d="M334.4 356.3 L736.8 434.2 L729.2 473.5 L983.4 481.9" stroke-width="1.38"/>
-            <path d="M333.3 361.5 L779.9 477 L791.4 432.5 L1053.6 547.8" stroke-width="0.9"/>
-            <path d="M331.8 366.6 L442 402.6 L433.3 429.2 L509.6 424.6" stroke-width="1.02"/>
-            <path d="M330 371.7 L581 471.1" stroke-width="1.14"/>
-            <path d="M327.8 376.5 L526 469.6 L506.4 511.2 L647.4 526.6" stroke-width="1.26"/>
-            <path d="M325.4 381.3 L562.6 511.1 L573.2 491.8 L707.9 590.7" stroke-width="1.38"/>
-            <path d="M322.7 385.9 L594.9 557.6 L576.8 586.4 L761.7 662.8" stroke-width="0.9"/>
-            <path d="M319.8 390.3 L808 742.5" stroke-width="1.02"/>
-            <path d="M316.5 394.5 L644.9 663.8 L630.9 680.8 L846.2 828.9" stroke-width="1.14"/>
-            <path d="M313 398.5 L661.8 721.8 L680.8 701.3 L875.6 920" stroke-width="1.26"/>
-            <path d="M309.3 402.3 L399.4 497.2 L370.4 524.7 L454.6 555.3" stroke-width="1.38"/>
-            <path d="M305.3 405.9 L494.3 631.1" stroke-width="0.9"/>
-            <path d="M301.1 409.2 L440 597.2 L417.5 613.8 L525.1 712.4" stroke-width="1.02"/>
-            <path d="M296.7 412.2 L451.6 651.6 L480.1 633.1 L546.6 798.4" stroke-width="1.14"/>
-            <path d="M292.2 415 L457.2 708.4 L417.1 730.9 L558.3 888.3" stroke-width="1.26"/>
-            <path d="M287.4 417.4 L559.9 920" stroke-width="1.38"/>
-            <path d="M282.6 419.6 L449 729.8 L419 745.9 L551 920" stroke-width="0.9"/>
-            <path d="M277.6 421.5 L435 730.6 L470.6 712.4 L531.5 920" stroke-width="1.02"/>
-            <path d="M272.5 423 L310.6 563.6 L289.4 569.3 L333.9 649.8" stroke-width="1.14"/>
-            <path d="M267.3 424.2 L331.2 735.7" stroke-width="1.26"/>
-            <path d="M262 425.2 L296.8 671.3 L257.2 676.9 L318.2 822.2" stroke-width="1.38"/>
-            <path d="M256.7 425.7 L280.3 724.8 L326.2 721.2 L294.7 908.2" stroke-width="0.9"/>
-            <path d="M251.4 426 L257.2 732.3 L229.2 732.8 L260.8 920" stroke-width="1.02"/>
-            <path d="M246.1 425.9 L216.6 920" stroke-width="1.14"/>
-            <path d="M240.8 425.5 L192.1 732.1 L146.7 724.9 L162.3 920" stroke-width="1.26"/>
-            <path d="M235.5 424.8 L217.1 532.4 L238.8 536.1 L205.9 598.3" stroke-width="1.38"/>
-            <path d="M230.3 423.7 L193.5 580 L160.4 572.2 L170.9 675.8" stroke-width="0.9"/>
-            <path d="M225.1 422.3 L126.3 749.7" stroke-width="1.02"/>
-            <path d="M220.1 420.6 L128.5 667.7 L107.9 660 L72.3 819.1" stroke-width="1.14"/>
-            <path d="M215.2 418.6 L87.5 706.6 L113.1 717.9 L9.3 883.1" stroke-width="1.26"/>
-            <path d="M210.4 416.3 L41.5 728.6 L6.3 709.6 L-62.1 920" stroke-width="1.38"/>
-            <path d="M205.7 413.7 L-80 920" stroke-width="0.9"/>
-            <path d="M201.2 410.8 L26.9 726.5 L2.4 713 L-80 920" stroke-width="1.02"/>
-            <path d="M196.9 407.7 L120.4 505.3 L147.2 526.3 L73.5 565.1" stroke-width="1.14"/>
-            <path d="M903 125.5 L960 26.8" stroke-width="0.85"/>
-            <path d="M910.8 130.6 L967.5 53 L985.3 66 L1002.3 5.5" stroke-width="0.85"/>
-            <path d="M918 136.5 L1000 46.8 L974.9 23.9 L1050.2 -8.2" stroke-width="0.85"/>
-            <path d="M924.5 143.1 L1102.3 -13.6" stroke-width="0.85"/>
-            <path d="M930.3 150.4 L1071.1 51.1 L1083.8 69.1 L1157.4 -9.8" stroke-width="0.85"/>
-            <path d="M935.2 158.3 L1108.2 62.4 L1094.6 37.9 L1214.2 3.7" stroke-width="0.85"/>
-            <path d="M939.3 166.7 L1271.2 27.2" stroke-width="0.85"/>
-            <path d="M942.4 175.4 L1180.7 104.4 L1193.8 148.5 L1326.7 60.9" stroke-width="0.85"/>
-            <path d="M944.6 184.5 L1214.1 135 L1209 107.5 L1379.3 104.7" stroke-width="0.85"/>
-            <path d="M945.8 193.7 L1427.5 158.3" stroke-width="0.85"/>
-            <path d="M945.9 203 L1035.2 206.1 L1033.6 252.1 L1089.9 208" stroke-width="0.85"/>
-            <path d="M945.1 212.3 L1058.6 228.7 L1061.7 206.9 L1128.2 238.7" stroke-width="0.85"/>
-            <path d="M943.3 221.4 L1162.2 277.6" stroke-width="0.85"/>
-            <path d="M940.5 230.3 L1095.4 288.5 L1081.3 325.9 L1190.4 324.2" stroke-width="0.85"/>
-            <path d="M936.8 238.8 L1107.2 324.9 L1117.1 305.3 L1211.7 377.6" stroke-width="0.85"/>
-            <path d="M932.1 246.8 L1224.8 436.9" stroke-width="0.85"/>
-            <path d="M926.6 254.4 L1114 407.2 L1088.7 438.2 L1228.9 500.8" stroke-width="0.85"/>
-            <path d="M920.4 261.2 L1108 451.5 L1140.8 419.2 L1223 568.1" stroke-width="0.85"/>
-            <path d="M913.4 267.4 L1206.6 637.3" stroke-width="0.85"/>
-            <path d="M905.8 272.8 L976.7 385.3" stroke-width="0.85"/>
-            <path d="M897.7 277.3 L945 374.3 L986.3 354.1 L974 433.7" stroke-width="0.85"/>
-            <path d="M889.1 280.9 L962 483.2" stroke-width="0.85"/>
-            <path d="M880.2 283.6 L917.5 437.9 L884.5 445.9 L940.4 532.4" stroke-width="0.85"/>
-          </g>
-          <g fill="#d2ebff">
-            <circle cx="240.9" cy="80.2" r="2.1"/>
-            <circle cx="259.3" cy="-2.9" r="2.65"/>
-            <circle cx="271.2" cy="112.9" r="2.1"/>
-            <circle cx="316.3" cy="113.7" r="2.1"/>
-            <circle cx="378.3" cy="115.3" r="2.1"/>
-            <circle cx="376.3" cy="85.6" r="3.2"/>
-            <circle cx="327.8" cy="183.2" r="2.1"/>
-            <circle cx="433.2" cy="22" r="2.65"/>
-            <circle cx="387.9" cy="131.7" r="2.1"/>
-            <circle cx="461.2" cy="124.1" r="2.1"/>
-            <circle cx="545.3" cy="128.2" r="2.1"/>
-            <circle cx="501.7" cy="162.5" r="3.2"/>
-            <circle cx="401.9" cy="232.8" r="2.1"/>
-            <circle cx="582.8" cy="134.8" r="2.65"/>
-            <circle cx="668.1" cy="116.7" r="3.2"/>
-            <circle cx="479.9" cy="217.2" r="2.1"/>
-            <circle cx="756.6" cy="108.6" r="2.65"/>
-            <circle cx="847.5" cy="110.6" r="3.2"/>
-            <circle cx="563" cy="219.8" r="2.1"/>
-            <circle cx="939.7" cy="123.2" r="2.65"/>
-            <circle cx="1032.4" cy="146.4" r="3.2"/>
-            <circle cx="648" cy="241.5" r="2.1"/>
-            <circle cx="1124.5" cy="180.3" r="2.65"/>
-            <circle cx="579.7" cy="300.7" r="3.2"/>
-            <circle cx="445.3" cy="316.7" r="2.1"/>
-            <circle cx="664.3" cy="316.5" r="2.65"/>
-            <circle cx="748" cy="342.6" r="3.2"/>
-            <circle cx="521.4" cy="341.4" r="2.1"/>
-            <circle cx="829.7" cy="379" r="2.65"/>
-            <circle cx="908.5" cy="425.5" r="3.2"/>
-            <circle cx="593.2" cy="384.6" r="2.1"/>
-            <circle cx="983.4" cy="481.9" r="2.65"/>
-            <circle cx="1053.6" cy="547.8" r="3.2"/>
-            <circle cx="657.4" cy="445.3" r="2.1"/>
-            <circle cx="509.6" cy="424.6" r="2.65"/>
-            <circle cx="581" cy="471.1" r="3.2"/>
-            <circle cx="443" cy="416.4" r="2.1"/>
-            <circle cx="647.4" cy="526.6" r="2.65"/>
-            <circle cx="707.9" cy="590.7" r="3.2"/>
-            <circle cx="497.5" cy="475.5" r="2.1"/>
-            <circle cx="761.7" cy="662.8" r="2.65"/>
-            <circle cx="808" cy="742.5" r="3.2"/>
-            <circle cx="539.5" cy="548.8" r="2.1"/>
-            <circle cx="846.2" cy="828.9" r="2.65"/>
-            <circle cx="566.2" cy="633.2" r="2.1"/>
-            <circle cx="454.6" cy="555.3" r="2.65"/>
-            <circle cx="494.3" cy="631.1" r="3.2"/>
-            <circle cx="390.4" cy="507.2" r="2.1"/>
-            <circle cx="525.1" cy="712.4" r="2.65"/>
-            <circle cx="546.6" cy="798.4" r="3.2"/>
-            <circle cx="409.2" cy="586" r="2.1"/>
-            <circle cx="410" cy="643.6" r="2.1"/>
-            <circle cx="391.9" cy="645.8" r="2.1"/>
-            <circle cx="333.9" cy="649.8" r="2.65"/>
-            <circle cx="331.2" cy="735.7" r="3.2"/>
-            <circle cx="296.1" cy="564.4" r="2.1"/>
-            <circle cx="318.2" cy="822.2" r="2.65"/>
-            <circle cx="273.8" cy="642.8" r="2.1"/>
-            <circle cx="232.8" cy="648.2" r="2.1"/>
-            <circle cx="205.9" cy="598.3" r="3.2"/>
-            <circle cx="222.2" cy="502.9" r="2.1"/>
-            <circle cx="170.9" cy="675.8" r="2.65"/>
-            <circle cx="126.3" cy="749.7" r="3.2"/>
-            <circle cx="180.6" cy="569.6" r="2.1"/>
-            <circle cx="72.3" cy="819.1" r="2.65"/>
-            <circle cx="122.5" cy="627.6" r="2.1"/>
-            <circle cx="77.1" cy="641.5" r="2.1"/>
-            <circle cx="73.5" cy="565.1" r="3.2"/>
-            <circle cx="141.4" cy="478.5" r="2.1"/>
-            <circle cx="960" cy="26.8" r="2.65"/>
-            <circle cx="1002.3" cy="5.5" r="3.2"/>
-            <circle cx="952" cy="74.3" r="2.1"/>
-            <circle cx="1050.2" cy="-8.2" r="2.65"/>
-            <circle cx="1102.3" cy="-13.6" r="3.2"/>
-            <circle cx="1004.5" cy="72.6" r="2.1"/>
-            <circle cx="1157.4" cy="-9.8" r="2.65"/>
-            <circle cx="1214.2" cy="3.7" r="3.2"/>
-            <circle cx="1060.8" cy="88.7" r="2.1"/>
-            <circle cx="1271.2" cy="27.2" r="2.65"/>
-            <circle cx="1326.7" cy="60.9" r="3.2"/>
-            <circle cx="1115.3" cy="123.9" r="2.1"/>
-            <circle cx="1379.3" cy="104.7" r="2.65"/>
-            <circle cx="1427.5" cy="158.3" r="3.2"/>
-            <circle cx="1162.6" cy="177.8" r="2.1"/>
-            <circle cx="1089.9" cy="208" r="2.65"/>
-            <circle cx="1128.2" cy="238.7" r="3.2"/>
-            <circle cx="1027.5" cy="224.2" r="2.1"/>
-            <circle cx="1162.2" cy="277.6" r="2.65"/>
-            <circle cx="1190.4" cy="324.2" r="3.2"/>
-            <circle cx="1053" cy="272.6" r="2.1"/>
-            <circle cx="1211.7" cy="377.6" r="2.65"/>
-            <circle cx="1224.8" cy="436.9" r="3.2"/>
-            <circle cx="1063.8" cy="332.3" r="2.1"/>
-            <circle cx="1228.9" cy="500.8" r="2.65"/>
-            <circle cx="1223" cy="568.1" r="3.2"/>
-            <circle cx="1056.6" cy="399.3" r="2.1"/>
-            <circle cx="1206.6" cy="637.3" r="2.65"/>
-            <circle cx="976.7" cy="385.3" r="3.2"/>
-            <circle cx="937.7" cy="323.4" r="2.1"/>
-            <circle cx="974" cy="433.7" r="2.65"/>
-            <circle cx="962" cy="483.2" r="3.2"/>
-            <circle cx="921.9" cy="371.9" r="2.1"/>
-            <circle cx="940.4" cy="532.4" r="2.65"/>
-          </g>
-          <g class="circuit-chip" transform="translate(250 340)">
-            <rect x="-58" y="-58" width="116" height="116" rx="8" fill="rgba(90,40,160,0.28)" stroke="#d7c4ff" stroke-width="1.6"/>
-            <rect x="-40" y="-40" width="80" height="80" rx="4" fill="none" stroke="#9ad0ff" stroke-width="1" opacity="0.7"/>
-            <g stroke="#8ec4ff" stroke-width="1.3" stroke-linecap="round">
-              <path d="M-34 -58 V-78"/><path d="M-12 -58 V-78"/><path d="M12 -58 V-78"/><path d="M34 -58 V-78"/>
-              <path d="M-34 58 V78"/><path d="M-12 58 V78"/><path d="M12 58 V78"/><path d="M34 58 V78"/>
-              <path d="M-58 -34 H-78"/><path d="M-58 -12 H-78"/><path d="M-58 12 H-78"/><path d="M-58 34 H-78"/>
-              <path d="M58 -34 H78"/><path d="M58 -12 H78"/><path d="M58 12 H78"/><path d="M58 34 H78"/>
-            </g>
-          </g>
-        </svg>
-      </div>
+    <section class="hero">
+      <div class="hero-field" aria-hidden="true"></div>
+      <svg class="hero-mesh" viewBox="0 0 400 240" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <radialGradient id="hero-mesh-br" cx="88%" cy="92%" r="65%">
+            <stop offset="0%" stop-color="rgba(99,102,241,0.45)"/>
+            <stop offset="55%" stop-color="rgba(109,40,217,0.22)"/>
+            <stop offset="100%" stop-color="rgba(11,11,43,0)"/>
+          </radialGradient>
+          <linearGradient id="hero-mesh-wave" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(79,70,229,0.28)"/>
+            <stop offset="100%" stop-color="rgba(11,11,43,0)"/>
+          </linearGradient>
+        </defs>
+        <ellipse fill="url(#hero-mesh-br)" cx="340" cy="210" rx="220" ry="130"/>
+        <path fill="url(#hero-mesh-wave)" d="M0 150 C90 118 180 168 280 132 C340 110 380 128 400 118 L400 240 L0 240 Z"/>
+      </svg>
       <div class="container">
-        <div class="hero-stack">
+        <div class="hero-layout">
           <div class="hero-text">
             <h1 data-split>הבוט שלא נותן ללקוחות <span class="text-grad">לחכות</span></h1>
             <div class="hero-fade">
               <p class="hero-sub">בערב, בסוף שבוע ובחג, AfterHours מרים את השיחה בעברית מדוברת, קובע תור ומעביר את הליד ל-CRM. בלי תפריט, ובלי לחכות לבוקר.</p>
               <div class="hero-ctas">
-                <a class="btn btn-primary" href="#demo">הזמן דמו של 15 דקות</a>
+                <a class="btn btn-primary btn-arrow" href="#demo">
+                  <span>הזמן דמו של 15 דקות</span>
+                  <svg class="btn-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l8 7-8 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
                 <a class="btn btn-secondary" href="#how">איך זה עובד</a>
+              </div>
+              <ul class="hero-trust" aria-label="יתרונות מרכזיים">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>מענה בערב, בסופ״ש ובחג</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>עברית מדוברת, כולל סלנג</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM10 4v3M14 4v3M10 17v3M14 17v3M4 10h3M4 14h3M17 10h3M17 14h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>חיבור CRM אחד</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-orb">
+              <div class="orb-shift orb-stars" style="--depth:0.5">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="orb-shift orb-core" style="--depth:0.85">
+                <span class="orb-ring"></span>
+                <span class="orb-ring"></span>
+                <span class="orb-ring"></span>
+                <span class="orb-sphere"></span>
+              </div>
+              <div class="orb-shift orb-card orb-card-1" style="--depth:1.45">
+                <div class="orb-card-in"><span>תור נקבע ✓</span></div>
+              </div>
+              <div class="orb-shift orb-card orb-card-2" style="--depth:1.1">
+                <div class="orb-card-in"><span>ליד הועבר ל-Monday</span></div>
+              </div>
+              <div class="orb-shift orb-card orb-card-3" style="--depth:1.65">
+                <div class="orb-card-in"><span>שיחה נכנסת 21:47</span></div>
               </div>
             </div>
           </div>
-          <div class="hero-demo hero-fade">
+        </div>
+      </div>
+      <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 64 C360 120 720 8 1080 52 C1260 78 1380 36 1440 48 V120 H0 Z"/>
+      </svg>
+      <a class="hero-scroll" href="#hero" aria-label="גלילה לשיחה לדוגמה">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </section>
+  </div>
+
+    <section class="section demo-section" id="hero">
+      <div class="container">
+        <div class="section-head center">
+          <h2>שיחה לדוגמה</h2>
+          <p>לחצו Play כדי לשמוע איך הבוט עונה בעברית מדוברת</p>
+        </div>
+        <div class="hero-demo">
             <div class="player compact" data-player data-scenario="garage">
               <div class="player-bar">
                 <div class="player-dots" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -371,7 +217,6 @@
                 <div class="tags" data-tags><span class="tag">תור נקבע</span><span class="tag purple">סונכרן ל-Monday</span></div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
@@ -548,6 +393,63 @@
       </div>
     </section>
 
+    <section class="section section-pricing reveal" id="pricing">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">תמחור</p>
+          <h2>משלמים רק על שיחה <span class="text-grad">שנענתה</span></h2>
+          <p class="lead">דמי מערכת חודשיים, ומחיר בשקלים לכל שיחה שהבוט באמת ענה לה. ככל שיש יותר שיחות, המחיר לשיחה יורד.</p>
+          <p class="highlight-pill">שיחה שלא נענתה לא מחויבת</p>
+          <p class="caption pricing-note">המחירים בעמוד הם טיוטה להמחשת המודל, עד לאישור מבנה התמחור.</p>
+        </div>
+        <div class="cols-3 plans">
+          <article class="card plan hoverable">
+            <h3>Starter</h3>
+            <p>לעסק עם נפח קטן, שרוצה מענה אחרי שעות בלי מערכת כבדה.</p>
+            <div class="price"><span class="big-num">₪4.90</span><span class="per">לשיחה שנענתה</span></div>
+            <p class="base"><span class="ltr">+ ₪149</span> דמי מערכת לחודש · עד 150 שיחות</p>
+            <ul>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>מענה בערב, בסופ״ש ובחג</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>עברית מדוברת, כולל סלנג</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>תמליל, סיכום וקביעת תור</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>חיבור CRM אחד</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>קו אחד · דוח חודשי קצר</span></li>
+            </ul>
+            <a class="btn btn-secondary btn-block" href="#demo">הזמן דמו של 15 דקות</a>
+          </article>
+          <article class="card plan featured hoverable">
+            <span class="tag badge-top">הכי מתאים לרוב העסקים</span>
+            <h3>Growth</h3>
+            <p>לעסק שהשיחות כבר חלק מהיום-יום, וצריך כמה חיבורים ותסריט משלו.</p>
+            <div class="price"><span class="big-num">₪3.90</span><span class="per">לשיחה שנענתה</span></div>
+            <p class="base"><span class="ltr">+ ₪349</span> דמי מערכת לחודש · עד 600 שיחות</p>
+            <ul>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>כל מה שב-Starter</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>שלושה חיבורי CRM</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>תסריט מותאם לתחום</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>שלושה קווים</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>סיווג ליד ו-SMS אישור</span></li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="#demo">הזמן דמו של 15 דקות</a>
+          </article>
+          <article class="card plan hoverable">
+            <h3>Scale</h3>
+            <p>לנפח גבוה, לכמה קווים, ולמי שרוצה אדם אחד מול AfterHours.</p>
+            <div class="price"><span class="big-num">₪2.90</span><span class="per">לשיחה שנענתה</span></div>
+            <p class="base"><span class="ltr">+ ₪790</span> דמי מערכת לחודש · מעל 600 שיחות</p>
+            <ul>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>כל מה שב-Growth</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>חיבורים ומספר קווים לפי הצורך</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>תסריטים לכמה צוותים</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>מנהל לקוח</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>הסכם שירות לפי היקף</span></li>
+            </ul>
+            <a class="btn btn-secondary btn-block" href="#demo">הזמן דמו של 15 דקות</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-faq reveal" id="faq">
       <div class="container">
         <div class="section-head center section-head-compact">
@@ -599,7 +501,7 @@
           <ul>
             <li><a href="#how">איך זה עובד</a></li>
             <li><a href="#hero">שיחה לדוגמה</a></li>
-            <li><a href="pricing.html">תמחור</a></li>
+            <li><a href="#pricing">תמחור</a></li>
           </ul>
         </div>
         <div>
