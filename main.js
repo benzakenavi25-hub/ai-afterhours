@@ -3,7 +3,6 @@
 
   document.documentElement.classList.add("js");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   /* ---------- Nav ---------- */
   const nav = document.querySelector(".nav");
   if (nav) {
@@ -29,8 +28,11 @@
   }
 
   /* ---------- Hero entrance ---------- */
-  const h1 = document.querySelector(".hero h1[data-split]");
-  if (h1) {
+  function initHeroSplit(animate = true) {
+    const h1 = document.querySelector(".hero h1[data-split]");
+    if (!h1) return;
+    h1.classList.remove("go");
+
     const walk = (node) => {
       [...node.childNodes].forEach((child) => {
         if (child.nodeType === Node.TEXT_NODE) {
@@ -51,7 +53,22 @@
       });
     };
     walk(h1);
+
     const words = h1.querySelectorAll(".word");
+    const runFade = () => {
+      document.querySelectorAll(".hero-fade").forEach((el) => {
+        el.classList.add("go");
+        el.style.animationDelay = "0ms";
+      });
+    };
+
+    if (!animate || reduceMotion) {
+      words.forEach((w) => { w.style.animationDelay = "0ms"; });
+      h1.classList.add("go");
+      runFade();
+      return;
+    }
+
     words.forEach((w, i) => { w.style.animationDelay = `${i * 60}ms`; });
     const wordsEnd = words.length * 60 + 300;
     requestAnimationFrame(() => h1.classList.add("go"));
@@ -60,6 +77,8 @@
       requestAnimationFrame(() => el.classList.add("go"));
     });
   }
+
+  initHeroSplit(true);
 
   /* ---------- Scroll reveal & counters ---------- */
   const formatNum = (n, decimals) =>
@@ -158,47 +177,38 @@
   const SCENARIOS = {
     garage: {
       title: "מוסך אורן, ראשון לציון",
+      place: "מוסך",
       meta: "שיחה נכנסת · יום ו׳ 21:47",
-      tags: ["תור נקבע", "סונכרן ל-Monday"],
+      result: { title: "תור נקבע: יום א׳ 08:30", sub: "נשלח SMS עם האישור והכתובת" },
       lines: [
-        ["bot", "ערב טוב, הגעת למוסך אורן. אני העוזרת הדיגיטלית, איך אפשר לעזור?"],
-        ["caller", "היי, תשמעי, נדלקה לי נורה של המנוע באמצע הדרך, זה משהו רציני?"],
-        ["bot", "לא נעים, אבל טוב שהתקשרת. הנורה דולקת קבוע או מהבהבת?"],
-        ["caller", "קבוע. האוטו נוסע סבבה, רק שזה מלחיץ אותי."],
-        ["bot", "אם היא קבועה והאוטו נוסע רגיל, זה בדרך כלל לא דחוף. אבל כדאי לעשות בדיקת מחשב. יש לי מקום ביום ראשון ב-08:30, מתאים?"],
-        ["caller", "יאללה, מעולה. שמים על השם רוני."],
-        ["event", "✓ תור נקבע: יום א׳ 08:30 · בדיקת מחשב"],
-        ["bot", "סגור רוני, שלחתי לך SMS עם האישור והכתובת. נסיעה טובה!"]
+        ["caller", "היי, נתקע לי נורה במנוע, זה רציני?"],
+        ["bot", "שלום, הגעתם למוסך אורן. אני העוזרת הדיגיטלית. איך אפשר לעזור?"],
+        ["caller", "יש מקום מחר ב־08:30?"],
+        ["bot", "כן, נקבע לך ליום א׳ ב־08:30. אשלח לך אישור והכתובת."]
       ]
     },
     clinic: {
       title: "מרפאת שיניים ד״ר לוי, חיפה",
+      place: "מרפאה",
       meta: "שיחה נכנסת · שבת 10:12",
-      tags: ["ליד חם", "סונכרן ל-Powerlink"],
+      result: { title: "תור נקבע: יום א׳ 08:00", sub: "נשלח SMS עם האישור" },
       lines: [
-        ["bot", "שבת שלום, הגעת למרפאת ד״ר לוי. המרפאה סגורה כרגע, אבל אני כאן לעזור."],
-        ["caller", "שבת שלום. כואבת לי שן כבר מאתמול בלילה, וואלה אני לא ישן."],
-        ["bot", "מצטערת לשמוע. הכאב חד או יותר עמום? ויש נפיחות?"],
-        ["caller", "חד, כשאני שותה משהו קר. אין נפיחות."],
-        ["bot", "הבנתי. אני מסמנת את זה כפנייה דחופה. רוצה שאקבע לך תור ראשון ביום ראשון, ב-08:00?"],
-        ["caller", "כן, בבקשה, הכי מוקדם שיש."],
-        ["event", "✓ פנייה דחופה הועברה לצוות · תור א׳ 08:00"],
-        ["bot", "נקבע. בינתיים, אפשר לקחת משכך כאבים רגיל ולהימנע מקר. רפואה שלמה!"]
+        ["caller", "כואבת לי שן מאתמול בלילה, זה דחוף?"],
+        ["bot", "שלום, הגעתם למרפאת ד״ר לוי. אני העוזרת הדיגיטלית. איך אפשר לעזור?"],
+        ["caller", "יש תור ראשון מחר ב־08:00?"],
+        ["bot", "כן, נקבע לך ליום א׳ ב־08:00. אשלח אישור לנייד."]
       ]
     },
     realestate: {
       title: "קבוצת נדל״ן אופק, תל אביב",
+      place: "נדל״ן",
       meta: "שיחה נכנסת · חוה״מ 19:30",
-      tags: ["ליד מסווג", "סונכרן ל-HubSpot"],
+      result: { title: "סיור נקבע: יום ה׳ 18:00", sub: "הליד הועבר לצוות עם התקציב" },
       lines: [
-        ["bot", "חג שמח, הגעת לאופק נדל״ן. במה אפשר לעזור?"],
-        ["caller", "ראיתי מודעה על 4 חדרים בפלורנטין, זה עוד רלוונטי?"],
-        ["bot", "כן, הדירה עדיין זמינה. רק כדי לדייק, מחפשים לקנות או לשכור?"],
-        ["caller", "לקנות. יש לנו משכנתא באישור עקרוני."],
-        ["bot", "מצוין. מה התקציב בערך, ומתי תרצו לראות את הדירה?"],
-        ["caller", "עד 3.2 מיליון. אפשר אחרי החג, בערב?"],
-        ["event", "✓ ליד חם · תקציב 3.2M ₪ · סיור ביום ה׳ 18:00"],
-        ["bot", "קבעתי לכם סיור ביום חמישי ב-18:00 עם אבי מהצוות. הוא יחזור אליכם מחר לאישור."]
+        ["caller", "ראיתי 4 חדרים בפלורנטין, זה עוד רלוונטי?"],
+        ["bot", "שלום, הגעתם לאופק נדל״ן. הדירה זמינה. לקנות או לשכור?"],
+        ["caller", "לקנות, עד 3.2 מיליון. אפשר ביום ה׳ בערב?"],
+        ["bot", "כן, סיור ביום ה׳ ב־18:00 עם אבי. הוא יאשר מחר."]
       ]
     }
   };
@@ -206,6 +216,8 @@
   const ICON_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg>';
   const ICON_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>';
   const ICON_REPLAY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4h4"/></svg>';
+
+  const clockOf = (meta) => (meta.match(/(\d{1,2}:\d{2})/) || ["", ""])[1];
 
   document.querySelectorAll("[data-player]").forEach((root) => {
     const tabs = root.querySelectorAll(".player-tab");
@@ -215,112 +227,201 @@
     const titleEl = root.querySelector("[data-title]");
     const metaEl = root.querySelector("[data-meta]");
     const timeEl = root.querySelector(".player-time");
-    const statusEl = root.querySelector("[data-status]");
-    const tagsEl = root.querySelector("[data-tags]");
-    const BARS = 48;
-    const LINE_MS = 2300;
+    const resultsEl = root.querySelector("[data-results]");
+    const resultTitle = root.querySelector("[data-result-title]");
+    const resultSub = root.querySelector("[data-result-sub]");
+    const headingEl = document.getElementById("demo-heading");
+    const BARS = 42;
+    const LINE_MS = 1700;
+    const TAIL_MS = 650;
+    const PREVIEW = 2;
 
     wave.innerHTML = "";
     const seed = [...Array(BARS)].map((_, i) => 0.25 + Math.abs(Math.sin(i * 1.7) * Math.cos(i * 0.6)) * 0.75);
-    const bars = seed.map((h) => {
+    const idleHeight = (i) => Math.round(34 + seed[i] * 52);
+    const bars = seed.map((_, i) => {
       const b = document.createElement("i");
-      b.style.height = `${Math.round(h * 40)}%`;
+      b.style.height = `${idleHeight(i)}%`;
       wave.appendChild(b);
       return b;
     });
 
     let key = root.dataset.scenario || "garage";
-    let idx = 0, timer = null, raf = null, playing = false, startedAt = 0, elapsedBefore = 0;
+    let lines = [];
+    let duration = 0;
+    let lineEls = [];
+    let raf = null;
+    let playing = false;
+    let started = false;
+    let finished = false;
+    let startedAt = 0;
+    let elapsedBefore = 0;
+    let resultAt = 0;
 
-    const total = () => SCENARIOS[key].lines.length * LINE_MS;
     const fmt = (ms) => {
-      const s = Math.floor(ms / 1000);
+      const s = Math.max(0, Math.floor(ms / 1000));
       return `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`;
     };
 
-    const setStatus = (txt) => { if (statusEl) statusEl.textContent = txt; };
-
-    const reset = () => {
-      stop();
-      idx = 0; elapsedBefore = 0;
-      const sc = SCENARIOS[key];
-      titleEl.textContent = sc.title;
-      metaEl.textContent = sc.meta;
-      tagsEl.innerHTML = sc.tags.map((t, i) => `<span class="tag${i ? " purple" : ""}">${t}</span>`).join("");
-      transcript.innerHTML = '<p class="transcript-empty">לחצו Play כדי לשמוע איך הבוט עונה בעברית מדוברת</p>';
-      bars.forEach((b, i) => { b.className = ""; b.style.height = `${Math.round(seed[i] * 40)}%`; });
-      timeEl.textContent = `00:00 / ${fmt(total())}`;
-      playBtn.innerHTML = ICON_PLAY;
-      playBtn.setAttribute("aria-label", "השמע שיחה לדוגמה");
-      setStatus("מוכן");
+    const setHeading = (sc) => {
+      if (!headingEl) return;
+      const clock = clockOf(sc.meta);
+      const next = `תקשיבו לבוט עונה ל${sc.place} ב־${clock}`;
+      if (headingEl.textContent === next) return;
+      headingEl.replaceChildren(document.createTextNode(`תקשיבו לבוט עונה ל${sc.place} ב־`));
+      const time = document.createElement("bdi");
+      time.dir = "ltr";
+      time.textContent = clock;
+      headingEl.append(time);
     };
 
-    const addLine = () => {
+    const loadScript = () => {
       const sc = SCENARIOS[key];
-      if (idx >= sc.lines.length) { finish(); return; }
-      if (idx === 0) transcript.innerHTML = "";
-      const [who, text] = sc.lines[idx];
-      const el = document.createElement("div");
-      el.className = `msg ${who}`;
-      const label = who === "bot" ? "AfterHours AI" : who === "caller" ? "לקוח" : "";
-      el.innerHTML = `${label ? `<span class="who">${label}</span>` : ""}<div class="bubble"></div>`;
-      el.querySelector(".bubble").textContent = text;
-      transcript.appendChild(el);
-      transcript.scrollTop = transcript.scrollHeight;
-      idx++;
-      timer = setTimeout(addLine, LINE_MS);
+      lines = sc.lines.map(([who, text], index) => ({
+        who,
+        text,
+        at: index * LINE_MS,
+        dur: LINE_MS
+      }));
+      resultAt = lines.length * LINE_MS;
+      duration = resultAt + TAIL_MS;
     };
 
-    const animate = () => {
-      const elapsed = elapsedBefore + (performance.now() - startedAt);
-      const p = Math.min(elapsed / total(), 1);
-      const doneCount = Math.floor(p * BARS);
-      const t = performance.now() / 120;
+    const paintIdleWave = () => {
       bars.forEach((b, i) => {
-        if (i < doneCount) { b.className = "done"; b.style.height = `${Math.round(seed[i] * 70)}%`; }
-        else if (i < doneCount + 4) {
-          b.className = "active";
-          b.style.height = `${Math.round(30 + Math.abs(Math.sin(t + i)) * 70)}%`;
-        } else { b.className = ""; b.style.height = `${Math.round(seed[i] * 40)}%`; }
+        b.className = "ready";
+        b.style.height = `${idleHeight(i)}%`;
       });
-      timeEl.textContent = `${fmt(elapsed)} / ${fmt(total())}`;
-      if (playing) raf = requestAnimationFrame(animate);
     };
 
-    const play = () => {
-      if (idx >= SCENARIOS[key].lines.length) reset();
-      playing = true;
-      root.classList.add("playing");
-      startedAt = performance.now();
-      playBtn.innerHTML = ICON_PAUSE;
-      playBtn.setAttribute("aria-label", "השהה");
-      setStatus("שיחה חיה");
-      addLine();
-      raf = requestAnimationFrame(animate);
+    const paintLiveWave = () => {
+      const t = performance.now() / 150;
+      bars.forEach((b, i) => {
+        b.className = "ready";
+        const wobble = reduceMotion ? 0 : Math.abs(Math.sin(t + i * 0.55)) * 26;
+        b.style.height = `${Math.round(Math.min(100, 22 + seed[i] * 40 + wobble))}%`;
+      });
+    };
+
+    const buildTranscript = () => {
+      lineEls = lines.map((line) => {
+        const el = document.createElement("div");
+        el.className = `call-line is-${line.who}`;
+        el.hidden = true;
+        const who = document.createElement("span");
+        who.className = "call-who";
+        who.textContent = line.who === "bot" ? "בוט" : "לקוח";
+        const text = document.createElement("p");
+        text.className = "call-text";
+        text.textContent = line.text;
+        el.append(who, text);
+        return el;
+      });
+      transcript.replaceChildren(...lineEls);
+    };
+
+    const fillResult = (sc) => {
+      if (resultTitle) resultTitle.textContent = `✓ ${sc.result.title}`;
+      if (resultSub) resultSub.textContent = sc.result.sub;
+    };
+
+    const showLines = (count, active) => {
+      lineEls.forEach((el, i) => {
+        el.hidden = i >= count;
+        const on = i === active;
+        el.classList.toggle("is-active", on);
+        if (on) el.setAttribute("aria-current", "true");
+        else el.removeAttribute("aria-current");
+      });
+    };
+
+    const showPreview = () => {
+      const count = Math.min(PREVIEW, lineEls.length);
+      showLines(count, count - 1);
+      if (resultsEl) resultsEl.hidden = true;
+    };
+
+    const highlight = (elapsed, isFinished) => {
+      const count = isFinished ? lineEls.length : lines.filter((line) => elapsed >= line.at).length;
+      const active = !isFinished && count > 0 && elapsed < lines[count - 1].at + lines[count - 1].dur ? count - 1 : -1;
+      showLines(count, active);
+      if (resultsEl) resultsEl.hidden = !(isFinished || elapsed >= resultAt);
+    };
+
+    const frame = () => {
+      const elapsed = Math.min(duration, elapsedBefore + (performance.now() - startedAt));
+      paintLiveWave();
+      timeEl.textContent = `${fmt(elapsed)} / ${fmt(duration)}`;
+      highlight(elapsed, false);
+      if (elapsed >= duration) {
+        finish();
+        return;
+      }
+      if (playing) raf = requestAnimationFrame(frame);
     };
 
     const stop = () => {
       if (playing) elapsedBefore += performance.now() - startedAt;
       playing = false;
       root.classList.remove("playing");
-      clearTimeout(timer);
       cancelAnimationFrame(raf);
+    };
+
+    const reset = () => {
+      stop();
+      started = false;
+      finished = false;
+      elapsedBefore = 0;
+      root.classList.remove("is-live", "is-done");
+      const sc = SCENARIOS[key];
+      loadScript();
+      titleEl.textContent = sc.title;
+      metaEl.textContent = sc.meta;
+      setHeading(sc);
+      fillResult(sc);
+      buildTranscript();
+      showPreview();
+      paintIdleWave();
+      timeEl.textContent = `00:00 / ${fmt(duration)}`;
+      playBtn.innerHTML = ICON_PLAY;
+      playBtn.setAttribute("aria-label", "השמע שיחה לדוגמה");
+    };
+
+    const play = () => {
+      if (finished || !started) {
+        elapsedBefore = 0;
+        finished = false;
+        showLines(0, -1);
+        if (resultsEl) resultsEl.hidden = true;
+      }
+      playing = true;
+      started = true;
+      root.classList.add("playing", "is-live");
+      root.classList.remove("is-done");
+      startedAt = performance.now();
+      playBtn.innerHTML = ICON_PAUSE;
+      playBtn.setAttribute("aria-label", "השהה");
+      raf = requestAnimationFrame(frame);
     };
 
     const pause = () => {
       stop();
+      paintIdleWave();
       playBtn.innerHTML = ICON_PLAY;
       playBtn.setAttribute("aria-label", "המשך השמעה");
-      setStatus("מושהה");
     };
 
     const finish = () => {
       stop();
-      bars.forEach((b, i) => { b.className = "done"; b.style.height = `${Math.round(seed[i] * 70)}%`; });
-      timeEl.textContent = `${fmt(total())} / ${fmt(total())}`;
+      finished = true;
+      elapsedBefore = duration;
+      root.classList.remove("is-live");
+      root.classList.add("is-done");
+      paintIdleWave();
+      timeEl.textContent = `${fmt(duration)} / ${fmt(duration)}`;
+      highlight(duration, true);
       playBtn.innerHTML = ICON_REPLAY;
       playBtn.setAttribute("aria-label", "השמע שוב");
-      setStatus("השיחה הסתיימה");
     };
 
     playBtn.addEventListener("click", () => (playing ? pause() : play()));
@@ -338,6 +439,7 @@
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => {
         tabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+        if (tab.id) transcript.setAttribute("aria-labelledby", tab.id);
         key = tab.dataset.key;
         reset();
       });
@@ -529,95 +631,4 @@
 
   /* ---------- Footer year ---------- */
   document.querySelectorAll("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
-
-  /* ---------- Pillars: pinned scroll ---------- */
-  initPillars();
-
-  function initPillars() {
-    const root = document.querySelector("[data-pillars]");
-    if (!root) return;
-    const pillars = [...root.querySelectorAll("[data-pillar]")];
-    const headline = root.querySelector("[data-pillars-center]");
-    const hint = root.querySelector("[data-pillars-hint]");
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const from = [
-      { x: 0, y: -48 },
-      { x: 56, y: 0 },
-      { x: -56, y: 0 },
-      { x: 40, y: 48 },
-      { x: -40, y: 48 },
-    ];
-    const drift = [
-      { x: 0, y: -20 },
-      { x: 20, y: 0 },
-      { x: -20, y: 0 },
-      { x: 14, y: 18 },
-      { x: -14, y: 18 },
-    ];
-    const windows = [
-      [0.05, 0.20],
-      [0.20, 0.35],
-      [0.35, 0.50],
-      [0.50, 0.65],
-      [0.65, 0.80],
-    ];
-
-    const clamp = (n, a, b) => Math.min(b, Math.max(a, n));
-    const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-    const span = (p, a, b) => {
-      if (p <= a) return 0;
-      if (p >= b) return 1;
-      return easeOut((p - a) / (b - a));
-    };
-
-    const setPillar = (el, show, ox, oy, dx, dy) => {
-      el.style.setProperty("--show", show.toFixed(4));
-      el.style.setProperty("--ox", `${ox}px`);
-      el.style.setProperty("--oy", `${oy}px`);
-      el.style.setProperty("--drift-x", `${dx}px`);
-      el.style.setProperty("--drift-y", `${dy}px`);
-    };
-
-    const pinProgress = () => {
-      const total = root.offsetHeight - window.innerHeight;
-      if (total <= 0) return 0;
-      return clamp(-root.getBoundingClientRect().top / total, 0, 1);
-    };
-
-    const renderPin = () => {
-      const p = pinProgress();
-      const breath = p < 0.5 ? 1 + p * 0.04 : 1.02 - (p - 0.5) * 0.04;
-      if (headline) headline.style.setProperty("--scale", breath.toFixed(4));
-      if (hint) hint.classList.toggle("is-gone", p > 0.18);
-      const hold = span(p, 0.8, 1);
-      pillars.forEach((el, i) => {
-        const [a, b] = windows[i];
-        const show = span(p, a, b);
-        const ox = from[i].x * (1 - show);
-        const oy = from[i].y * (1 - show);
-        setPillar(el, show, ox, oy, drift[i].x * hold, drift[i].y * hold);
-      });
-    };
-
-    let ticking = false;
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        if (mq.matches) {
-          pillars.forEach((el, i) => setPillar(el, 1, 0, 0, drift[i].x, drift[i].y));
-          if (headline) headline.style.setProperty("--scale", "1");
-          if (hint) hint.classList.remove("is-gone");
-        } else {
-          renderPin();
-        }
-        ticking = false;
-      });
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    mq.addEventListener("change", onScroll);
-    onScroll();
-  }
 })();

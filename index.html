@@ -94,7 +94,13 @@
           <li><a href="#faq">שאלות</a></li>
         </ul>
       </nav>
-      <a class="btn btn-primary btn-sm nav-cta" href="#demo">הזמן דמו של 15 דקות</a>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="בחירת שפה">
+          <button type="button" aria-pressed="true">עברית</button>
+          <button type="button" aria-pressed="false" disabled title="גרסת English בשלב 2">English</button>
+        </div>
+        <a class="btn btn-primary btn-sm nav-cta" href="#demo">הזמן דמו של 15 דקות</a>
+      </div>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="תפריט">
         <svg class="icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -141,32 +147,46 @@
                 <a class="btn btn-secondary" href="#how">איך זה עובד</a>
               </div>
               <ul class="hero-trust" aria-label="יתרונות מרכזיים">
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>מענה בערב, בסופ״ש ובחג</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>עברית מדוברת, כולל סלנג</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM10 4v3M14 4v3M10 17v3M14 17v3M4 10h3M4 14h3M17 10h3M17 14h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>חיבור CRM אחד</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>מענה בערב, בסופ״ש ובחג</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>עברית מדוברת, כולל סלנג</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM10 4v3M14 4v3M10 17v3M14 17v3M4 10h3M4 14h3M17 10h3M17 14h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>חיבור CRM אחד</span></li>
               </ul>
             </div>
           </div>
           <div class="hero-visual" aria-hidden="true">
-            <div class="hero-orb">
-              <div class="orb-shift orb-stars" style="--depth:0.5">
-                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-                <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <div class="phone-scene">
+              <div class="phone">
+                <div class="phone-screen">
+                  <div class="phone-incoming">
+                    <p class="phone-kicker">שיחה נכנסת</p>
+                    <p class="phone-name">מוסך אורן</p>
+                    <p class="phone-time">21:47</p>
+                    <p class="phone-closed">המשרד סגור</p>
+                    <div class="orb-card orb-card-3">
+                      <div class="orb-card-in"><span>שיחה נכנסת 21:47</span></div>
+                    </div>
+                  </div>
+                  <div class="phone-live">
+                    <p class="phone-status"><i></i>הבוט עונה</p>
+                    <div class="phone-wave">
+                      <i style="--h:38%"></i><i style="--h:72%"></i><i style="--h:46%"></i><i style="--h:90%"></i><i style="--h:28%"></i><i style="--h:64%"></i><i style="--h:100%"></i><i style="--h:42%"></i><i style="--h:78%"></i><i style="--h:34%"></i><i style="--h:86%"></i><i style="--h:52%"></i><i style="--h:68%"></i><i style="--h:96%"></i><i style="--h:30%"></i><i style="--h:58%"></i><i style="--h:80%"></i><i style="--h:44%"></i><i style="--h:92%"></i><i style="--h:36%"></i><i style="--h:74%"></i><i style="--h:50%"></i><i style="--h:88%"></i><i style="--h:40%"></i><i style="--h:62%"></i><i style="--h:98%"></i><i style="--h:48%"></i><i style="--h:70%"></i>
+                    </div>
+                    <div class="phone-lines">
+                      <p class="phone-line"><span>בוט</span>ערב טוב, מוסך אורן. איך אפשר לעזור?</p>
+                      <p class="phone-line is-caller"><span>לקוח</span>נדלקה לי נורה במנוע, זה רציני?</p>
+                      <p class="phone-line"><span>בוט</span>יש מקום מחר ב-08:30, מתאים?</p>
+                      <p class="phone-line is-caller"><span>לקוח</span>יאללה, שמים על רוני.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="orb-shift orb-core" style="--depth:0.85">
-                <span class="orb-ring"></span>
-                <span class="orb-ring"></span>
-                <span class="orb-ring"></span>
-                <span class="orb-sphere"></span>
-              </div>
-              <div class="orb-shift orb-card orb-card-1" style="--depth:1.45">
-                <div class="orb-card-in"><span>תור נקבע ✓</span></div>
-              </div>
-              <div class="orb-shift orb-card orb-card-2" style="--depth:1.1">
-                <div class="orb-card-in"><span>ליד הועבר ל-Monday</span></div>
-              </div>
-              <div class="orb-shift orb-card orb-card-3" style="--depth:1.65">
-                <div class="orb-card-in"><span>שיחה נכנסת 21:47</span></div>
+              <div class="phone-chips">
+                <div class="orb-card orb-card-1">
+                  <div class="orb-card-in"><span>תור נקבע · מחר 08:30</span></div>
+                </div>
+                <div class="orb-card orb-card-2">
+                  <div class="orb-card-in"><span>ליד נשלח ל-Monday</span></div>
+                </div>
               </div>
             </div>
           </div>
@@ -184,15 +204,11 @@
     <section class="section demo-section" id="hero">
       <div class="container">
         <div class="section-head center">
-          <h2>שיחה לדוגמה</h2>
-          <p>לחצו Play כדי לשמוע איך הבוט עונה בעברית מדוברת</p>
+          <h2 id="demo-heading" aria-live="polite">תקשיבו לבוט עונה למוסך ב־<bdi dir="ltr">21:47</bdi></h2>
+          <p>שיחה נכנסת, מענה בעברית, ותוצאה שנשמרת לעסק.</p>
         </div>
         <div class="hero-demo">
-            <div class="player compact" data-player data-scenario="garage">
-              <div class="player-bar">
-                <div class="player-dots" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="player-status"><span class="live-dot" aria-hidden="true"></span><span data-status>מוכן</span></div>
-              </div>
+            <div class="player" data-player data-scenario="garage">
               <div class="player-tabs" role="tablist" aria-label="תרחישי שיחה">
                 <button type="button" class="player-tab" role="tab" id="hero-tab-garage" data-key="garage" aria-selected="true" aria-controls="hero-transcript">מוסך</button>
                 <button type="button" class="player-tab" role="tab" id="hero-tab-clinic" data-key="clinic" aria-selected="false" aria-controls="hero-transcript">מרפאה</button>
@@ -206,80 +222,119 @@
                   <strong data-title>מוסך אורן, ראשון לציון</strong>
                   <span data-meta>שיחה נכנסת · יום ו׳ 21:47</span>
                 </div>
-                <span class="player-time">00:00</span>
+                <span class="player-time">00:00 / 00:00</span>
               </div>
               <div class="waveform" aria-hidden="true"></div>
-              <div class="transcript" id="hero-transcript" role="tabpanel" aria-labelledby="hero-tab-garage" aria-live="polite">
-                <p class="transcript-empty">לחצו Play כדי לשמוע איך הבוט עונה בעברית מדוברת</p>
-              </div>
-              <div class="player-foot">
-                <span>שיחת הדגמה כתובה · לא הקלטה של לקוח</span>
-                <div class="tags" data-tags><span class="tag">תור נקבע</span><span class="tag purple">סונכרן ל-Monday</span></div>
+              <div class="transcript" id="hero-transcript" role="tabpanel" aria-labelledby="hero-tab-garage"></div>
+              <div class="player-results" data-results hidden>
+                <p class="demo-result-main" data-result-title></p>
+                <p class="demo-result-sub" data-result-sub></p>
               </div>
             </div>
         </div>
       </div>
     </section>
 
-    <div class="pillars-scroll" data-pillars>
-      <section class="pillars" id="pillars" aria-label="חמישה עמודי תווך">
-        <div class="pillars-stage">
-          <div class="pillars-center" data-pillars-center>
-            <p class="pillars-kicker">המערכת</p>
-            <h2 class="pillars-title"><span class="pillars-grad">הקול</span> שעובד כשהמשרד <span class="pillars-grad">סגור</span></h2>
-            <p class="pillars-sub">חמישה עמודים שמחזיקים כל שיחה. מעברית מדוברת ועד ליד ב-CRM.</p>
-          </div>
+    <section class="pillars" id="pillars" aria-label="חמישה עמודי תווך">
+      <header class="pillars-head">
+        <p class="pillars-kicker">המערכת</p>
+        <h2 class="pillars-title"><span class="pillars-grad">הקול</span> שעובד כשהמשרד <span class="pillars-grad">סגור</span></h2>
+        <p class="pillars-sub">חמישה עמודים שמחזיקים כל שיחה. מעברית מדוברת ועד ליד ב-<span class="ltr">CRM</span>.</p>
+      </header>
 
-          <article class="pillar pillar-01" data-pillar>
-            <span class="pillar-num" aria-hidden="true">01</span>
-            <div class="pillar-label">
-              <span class="pillar-eye">עמוד תווך · 01</span>
-              <span class="pillar-word">קול</span>
-              <span class="pillar-note">עונה בשיחה, לא בתפריט לחצנים</span>
+      <div class="pillars-bento">
+        <article class="bento bento-voice">
+          <div class="bento-viz" aria-hidden="true">
+            <div class="wave">
+              <i style="--h:28%;--d:0s"></i>
+              <i style="--h:48%;--d:.08s"></i>
+              <i style="--h:72%;--d:.16s"></i>
+              <i style="--h:40%;--d:.24s"></i>
+              <i style="--h:96%;--d:.12s"></i>
+              <i style="--h:58%;--d:.32s"></i>
+              <i style="--h:100%;--d:.2s"></i>
+              <i style="--h:46%;--d:.4s"></i>
+              <i style="--h:84%;--d:.1s"></i>
+              <i style="--h:34%;--d:.28s"></i>
+              <i style="--h:76%;--d:.18s"></i>
+              <i style="--h:52%;--d:.36s"></i>
+              <i style="--h:90%;--d:.06s"></i>
+              <i style="--h:38%;--d:.22s"></i>
+              <i style="--h:64%;--d:.14s"></i>
+              <i style="--h:88%;--d:.3s"></i>
+              <i style="--h:42%;--d:.18s"></i>
+              <i style="--h:70%;--d:.04s"></i>
             </div>
-          </article>
-          <article class="pillar pillar-02" data-pillar>
-            <span class="pillar-num" aria-hidden="true">02</span>
-            <div class="pillar-label">
-              <span class="pillar-eye">עמוד תווך · 02</span>
-              <span class="pillar-word">עברית</span>
-              <span class="pillar-note">מדוברת, עם סלנג. לא תרגום</span>
-            </div>
-          </article>
-          <article class="pillar pillar-03" data-pillar>
-            <span class="pillar-num" aria-hidden="true">03</span>
-            <div class="pillar-label">
-              <span class="pillar-eye">עמוד תווך · 03</span>
-              <span class="pillar-word">תור</span>
-              <span class="pillar-note">נקבע בשיחה, עוד לפני הבוקר</span>
-            </div>
-          </article>
-          <article class="pillar pillar-04" data-pillar>
-            <span class="pillar-num" aria-hidden="true">04</span>
-            <div class="pillar-label">
-              <span class="pillar-eye">עמוד תווך · 04</span>
-              <span class="pillar-word">ליד</span>
-              <span class="pillar-note">נוחת אצלכם ב-CRM, עם תמליל</span>
-            </div>
-          </article>
-          <article class="pillar pillar-05" data-pillar>
-            <span class="pillar-num" aria-hidden="true">05</span>
-            <div class="pillar-label">
-              <span class="pillar-eye">עמוד תווך · 05</span>
-              <span class="pillar-word">ערב</span>
-              <span class="pillar-note">גם בסוף שבוע, בחג ובלילה</span>
-            </div>
-          </article>
-
-          <div class="pillars-hint" data-pillars-hint>
-            <span>גללו כדי ללמוד עוד</span>
-            <span class="pillars-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
           </div>
-        </div>
-      </section>
-    </div>
+          <div class="bento-copy">
+            <h3>קול</h3>
+            <p>עונה בשיחה, לא בתפריט לחצנים</p>
+          </div>
+        </article>
+
+        <article class="bento bento-he">
+          <div class="bento-viz" aria-hidden="true">
+            <div class="bento-chat">
+              <p class="bubble bubble-a">רגע, אני באוטו</p>
+              <p class="bubble bubble-b is-bot">כמה זה דחוף?</p>
+              <p class="bubble bubble-c">יאללה, בוא נקבע</p>
+            </div>
+          </div>
+          <div class="bento-copy">
+            <h3>עברית</h3>
+            <p>מדוברת, עם סלנג. לא תרגום</p>
+          </div>
+        </article>
+
+        <article class="bento bento-queue">
+          <div class="bento-viz" aria-hidden="true">
+            <div class="ticket">
+              <p>מחר <span class="ltr">08:30</span> · <span class="ticket-ok">נקבע ✓</span></p>
+            </div>
+          </div>
+          <div class="bento-copy">
+            <h3>תור</h3>
+            <p>נקבע בשיחה, עוד לפני הבוקר</p>
+          </div>
+        </article>
+
+        <article class="bento bento-lead">
+          <div class="bento-viz" aria-hidden="true">
+            <div class="crm">
+              <div class="crm-row">
+                <span class="crm-av">נ</span>
+                <span class="crm-id">
+                  <strong>נועה לוי</strong>
+                  <span class="ltr">052-448-1903</span>
+                </span>
+              </div>
+              <span class="crm-status"><i></i>תמליל נשמר</span>
+            </div>
+          </div>
+          <div class="bento-copy">
+            <h3>ליד</h3>
+            <p>נוחת אצלכם ב-<span class="ltr">CRM</span>, עם תמליל</p>
+          </div>
+        </article>
+
+        <article class="bento bento-evening">
+          <div class="bento-viz" aria-hidden="true">
+            <svg class="clock" viewBox="0 0 120 120" width="140" height="140">
+              <circle cx="60" cy="60" r="52" fill="rgba(78,205,196,0.08)" stroke="#4ECDC4" stroke-width="2"/>
+              <path d="M60 12v8M60 100v8M12 60h8M100 60h8" fill="none" stroke="#4ECDC4" stroke-width="3" stroke-linecap="round"/>
+              <line class="clock-hour" x1="60" y1="60" x2="60" y2="34" stroke="#4ECDC4" stroke-width="4.5" stroke-linecap="round" transform="rotate(293.5 60 60)"/>
+              <line class="clock-min" x1="60" y1="60" x2="60" y2="22" stroke="#4ECDC4" stroke-width="3" stroke-linecap="round" transform="rotate(282 60 60)"/>
+              <circle cx="60" cy="60" r="4" fill="#4ECDC4"/>
+            </svg>
+            <p class="clock-read"><span class="ltr">21:47</span> · המשרד סגור</p>
+          </div>
+          <div class="bento-copy">
+            <h3>ערב</h3>
+            <p>גם בסוף שבוע, בחג ובלילה</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <section class="section reveal" id="how">
       <div class="container">
@@ -288,32 +343,88 @@
           <h2>איך זה עובד</h2>
           <p>אין פרויקט של רבעון. יש שיחה, יש הבנה, ויש רשומה אצלכם לפני שפותחים את המשרד.</p>
         </div>
-        <div class="cols-3 steps">
-          <article class="card step hoverable">
-            <div class="step-num">01</div>
-            <h3>הלקוח מתקשר</h3>
-            <p>הבוט עונה מיד, בעברית, בלי תפריט. גם אם אומרים רגע, אני באוטו.</p>
-          </article>
-          <article class="card step hoverable">
-            <div class="step-num">02</div>
-            <h3>מבינים מה צריך</h3>
-            <p>שאלה שמדייקת: כמה זה דחוף, מה התקציב, מתי נוח. ואז תור, או סינון.</p>
-          </article>
-          <article class="card step hoverable">
-            <div class="step-num">03</div>
-            <h3>זה נוחת אצלכם</h3>
-            <p>סיכום, תמליל והפעולה הבאה ב-Powerlink, ב-Monday או ב-HubSpot.</p>
-          </article>
+        <div class="how-journey">
+          <div class="how-timeline" aria-hidden="true">
+            <div class="how-timeline-rail">
+              <span class="how-timeline-track"></span>
+              <span class="how-timeline-fill"></span>
+              <span class="how-timeline-arrow how-timeline-arrow--a"></span>
+              <span class="how-timeline-arrow how-timeline-arrow--b"></span>
+            </div>
+            <div class="how-timeline-step">
+              <p class="how-timeline-label">שיחה נכנסת</p>
+              <span class="how-timeline-dot"></span>
+            </div>
+            <div class="how-timeline-step">
+              <p class="how-timeline-label">תמלול</p>
+              <span class="how-timeline-dot"></span>
+            </div>
+            <div class="how-timeline-step">
+              <p class="how-timeline-label">כרטיס Monday</p>
+              <span class="how-timeline-dot"></span>
+            </div>
+          </div>
+          <div class="how-steps steps">
+            <article class="card step how-cube hoverable">
+              <div class="step-num" aria-hidden="true">01</div>
+              <div class="how-viz how-viz-wave" aria-hidden="true">
+                <div class="how-wave">
+                  <i style="--h:36%;--d:0s"></i>
+                  <i style="--h:58%;--d:.1s"></i>
+                  <i style="--h:88%;--d:.18s"></i>
+                  <i style="--h:44%;--d:.26s"></i>
+                  <i style="--h:72%;--d:.14s"></i>
+                  <i style="--h:52%;--d:.22s"></i>
+                  <i style="--h:96%;--d:.08s"></i>
+                  <i style="--h:40%;--d:.3s"></i>
+                </div>
+              </div>
+              <h3>הלקוח מתקשר</h3>
+              <p>הבוט עונה מיד, בעברית, בלי תפריט. גם אם אומרים רגע, אני באוטו.</p>
+            </article>
+            <article class="card step how-cube hoverable">
+              <div class="step-num" aria-hidden="true">02</div>
+              <div class="how-viz" aria-hidden="true">
+                <div class="how-transcript">
+                  <span class="how-transcript-tag">שאלה</span>
+                  <p class="how-transcript-line">כמה זה דחוף, ומה התקציב בערך?</p>
+                </div>
+              </div>
+              <h3>מבינים מה צריך</h3>
+              <p>שאלה שמדייקת: כמה זה דחוף, מה התקציב, מתי נוח. ואז תור, או סינון.</p>
+            </article>
+            <article class="card step how-cube hoverable">
+              <div class="step-num" aria-hidden="true">03</div>
+              <div class="how-viz" aria-hidden="true">
+                <div class="how-monday">
+                  <div class="how-monday-bar"></div>
+                  <div class="how-monday-body">
+                    <div class="how-monday-row">
+                      <span class="how-monday-check" aria-hidden="true"></span>
+                      <span class="how-monday-label">ליד · תור ראשון</span>
+                    </div>
+                    <div class="how-monday-row">
+                      <span class="how-monday-check is-on" aria-hidden="true"></span>
+                      <span class="how-monday-label">סיכום + תמליל</span>
+                    </div>
+                    <span class="how-monday-pill">Monday · ממתין לצוות</span>
+                  </div>
+                </div>
+              </div>
+              <h3>זה נוחת אצלכם</h3>
+              <p>סיכום, תמליל והפעולה הבאה ב-Powerlink, ב-Monday או ב-HubSpot.</p>
+            </article>
+          </div>
         </div>
-        <p class="caption center-note">בסיום כל שיחה נשמר סיכום קצר. בלי מודול אנליטיקה שצריך ללמוד.</p>
-        <div class="mid-cta">
+        <p class="caption how-note">בסיום כל שיחה נשמר סיכום קצר. בלי מודול אנליטיקה שצריך ללמוד.</p>
+        <div class="mid-cta how-cta">
           <a class="btn btn-primary" href="#demo">הזמן דמו של 15 דקות</a>
           <a class="btn btn-secondary" href="#hero">שמעו שיחה לדוגמה</a>
         </div>
       </div>
     </section>
 
-    <section class="section closing reveal" id="demo">
+    <section class="section closing demo-form-section reveal" id="demo">
       <div class="dot-grid" aria-hidden="true"></div>
       <div class="container">
         <div class="closing-box">
@@ -397,17 +508,24 @@
       <div class="container">
         <div class="section-head center">
           <p class="eyebrow">תמחור</p>
-          <h2>משלמים רק על שיחה <span class="text-grad">שנענתה</span></h2>
+          <h2>משלמים רק על שיחה <span class="text-accent">שנענתה</span></h2>
           <p class="lead">דמי מערכת חודשיים, ומחיר בשקלים לכל שיחה שהבוט באמת ענה לה. ככל שיש יותר שיחות, המחיר לשיחה יורד.</p>
           <p class="highlight-pill">שיחה שלא נענתה לא מחויבת</p>
           <p class="caption pricing-note">המחירים בעמוד הם טיוטה להמחשת המודל, עד לאישור מבנה התמחור.</p>
         </div>
+
+        <aside class="pricing-pilot" aria-labelledby="pricing-pilot-heading">
+          <h3 class="pricing-pilot-title" id="pricing-pilot-heading">מחפשים 5 עסקים לפיילוט</h3>
+          <p class="pricing-pilot-lead">מוזמנים לשמוע את המערכת על התחום שלכם, עם הקמה מלווה — בלי התחייבות.</p>
+          <a class="btn btn-primary" href="#demo">הזמן דמו של 15 דקות</a>
+        </aside>
+
         <div class="cols-3 plans">
           <article class="card plan hoverable">
             <h3>Starter</h3>
             <p>לעסק עם נפח קטן, שרוצה מענה אחרי שעות בלי מערכת כבדה.</p>
-            <div class="price"><span class="big-num">₪4.90</span><span class="per">לשיחה שנענתה</span></div>
-            <p class="base"><span class="ltr">+ ₪149</span> דמי מערכת לחודש · עד 150 שיחות</p>
+            <div class="price"><span class="big-num ltr">4.90 ₪</span><span class="per">לשיחה שנענתה</span></div>
+            <p class="base"><span class="ltr">+ 149 ₪</span> דמי מערכת לחודש · עד 150 שיחות</p>
             <ul>
               <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>מענה בערב, בסופ״ש ובחג</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>עברית מדוברת, כולל סלנג</span></li>
@@ -421,8 +539,8 @@
             <span class="tag badge-top">הכי מתאים לרוב העסקים</span>
             <h3>Growth</h3>
             <p>לעסק שהשיחות כבר חלק מהיום-יום, וצריך כמה חיבורים ותסריט משלו.</p>
-            <div class="price"><span class="big-num">₪3.90</span><span class="per">לשיחה שנענתה</span></div>
-            <p class="base"><span class="ltr">+ ₪349</span> דמי מערכת לחודש · עד 600 שיחות</p>
+            <div class="price"><span class="big-num ltr">3.90 ₪</span><span class="per">לשיחה שנענתה</span></div>
+            <p class="base"><span class="ltr">+ 349 ₪</span> דמי מערכת לחודש · עד 600 שיחות</p>
             <ul>
               <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>כל מה שב-Starter</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>שלושה חיבורי CRM</span></li>
@@ -435,8 +553,8 @@
           <article class="card plan hoverable">
             <h3>Scale</h3>
             <p>לנפח גבוה, לכמה קווים, ולמי שרוצה אדם אחד מול AfterHours.</p>
-            <div class="price"><span class="big-num">₪2.90</span><span class="per">לשיחה שנענתה</span></div>
-            <p class="base"><span class="ltr">+ ₪790</span> דמי מערכת לחודש · מעל 600 שיחות</p>
+            <div class="price"><span class="big-num ltr">2.90 ₪</span><span class="per">לשיחה שנענתה</span></div>
+            <p class="base"><span class="ltr">+ 790 ₪</span> דמי מערכת לחודש · מעל 600 שיחות</p>
             <ul>
               <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>כל מה שב-Growth</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="fill" cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>חיבורים ומספר קווים לפי הצורך</span></li>
