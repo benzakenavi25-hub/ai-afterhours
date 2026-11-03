@@ -2680,3 +2680,202 @@ body:has(.home-frame) .mobile-cta .btn-primary:focus-visible {
   .hero-trust { padding-block: 10px; }
   .hero-mesh { height: min(36%, 180px); }
 }
+
+.plans-swipe { display: none; }
+
+/* ---------- Phone (≤767): tighter layout, desktop untouched ---------- */
+@media (max-width: 767px) {
+  html { scroll-padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+  body { overflow-x: hidden; }
+
+  .hero {
+    min-height: 0;
+    padding-block: calc(var(--nav-h) + 6px) 20px;
+  }
+  .hero .hero-mesh { height: 120px; }
+  .hero-layout {
+    min-height: 0;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+  .hero-visual { padding: 0; }
+  .phone-scene { width: 100%; gap: 6px; }
+  .phone {
+    width: auto;
+    height: min(30svh, 280px);
+    max-height: 30svh;
+    max-width: 42vw;
+    aspect-ratio: 9 / 19.5;
+    border-radius: 28px;
+    padding: 8px;
+  }
+  .phone::before { width: 52px; height: 7px; top: 12px; }
+  .phone-incoming,
+  .phone-live { inset: 16px 0 0; }
+  .phone-incoming { padding: 8px 8px 8px; gap: 2px; }
+  .phone-incoming::before { width: 36px; height: 36px; margin-bottom: 0; box-shadow: 0 0 0 5px rgba(78, 205, 196, 0.14); }
+  .phone-live { padding: 10px 8px 6px; gap: 4px; }
+  .phone-name { font-size: 15px; }
+  .phone-time { font-size: 20px; }
+  .phone-kicker, .phone-status, .phone-closed { font-size: 11px; }
+  .phone-wave { height: 18px; }
+  .phone-lines { gap: 3px; padding-block: 0; }
+  .phone-line { font-size: 11px; line-height: 1.25; }
+  .phone-line span { font-size: 10px; }
+  .phone-chips { min-height: 0; gap: 6px; }
+  .hero .orb-card-in { font-size: 11px; padding: 5px 8px; white-space: normal; }
+  .hero-text { padding-block-start: 2px; }
+  .hero-fade { gap: 8px; }
+  .hero h1 { font-size: clamp(1.7rem, 7.6vw, 2.15rem); line-height: 1.12; }
+  .hero-sub { font-size: 15px; line-height: 1.4; max-width: 22rem; }
+  .home-frame .hero .hero-ctas .btn-primary,
+  .hero-ctas .btn-primary { height: 48px; width: calc(100% - 32px); }
+  .hero-trust {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    padding: 4px 12px;
+    font-size: 14px;
+    white-space: normal;
+  }
+  .hero-trust li {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: start;
+    gap: 8px;
+    padding: 8px 0;
+    border-inline-start: 0;
+    border-block-start: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .hero-trust li:first-child { border-block-start: 0; }
+  .hero-trust li span { white-space: normal; }
+  .hero-trust svg { width: 18px; height: 18px; }
+  .hero-scroll { display: none; }
+
+  .demo-section { padding-block: 32px 24px; }
+  .demo-section .section-head { margin-block-end: 16px; }
+  .demo-section .section-head p { margin-block-start: 8px; font-size: 15px; }
+  .demo-section .hero-demo::before { display: none; }
+  .demo-section .player-tabs { padding: 10px 12px 0; gap: 6px; }
+  .demo-section .player-tab { height: 30px; padding-inline: 12px; }
+  .demo-section .player-head { padding: 12px; gap: 10px; }
+  .demo-section .play-btn { width: 44px; height: 44px; }
+  .demo-section .play-btn svg { width: 16px; height: 16px; }
+  .demo-section .player-info strong { font-size: 15px; }
+  .demo-section .player-info span,
+  .demo-section .player-time { font-size: 12px; }
+  .demo-section .waveform { height: 44px; padding-inline: 12px; }
+  .demo-section .transcript { padding: 0 12px 4px; gap: 6px; }
+  .demo-section .call-line { padding: 8px 10px; gap: 8px; }
+  .demo-section .call-who { font-size: 12px; }
+  .demo-section .call-text { font-size: 15px; line-height: 1.4; }
+  .demo-section .player-results { margin: 8px 12px 12px; padding: 12px; }
+
+  .pillars {
+    min-height: 0;
+    gap: 12px;
+    padding: 28px var(--gutter-x) 28px;
+  }
+  .pillars-title { font-size: 24px; }
+  .pillars-sub { font-size: 15px; margin-block-start: 6px; }
+  .pillars-bento { gap: 8px; min-height: 0; }
+  .bento {
+    min-height: 0;
+    gap: 8px;
+    padding: 12px 12px 10px;
+  }
+  .bento-viz,
+  .bento-evening .bento-viz { min-height: 0; }
+  .wave { height: 64px; }
+  .clock { width: 72px; height: 72px; }
+  .bento-copy h3 { font-size: 17px; }
+  .bento-copy p,
+  .bento-chat .bubble,
+  .ticket p,
+  .clock-read,
+  .crm-id strong,
+  .crm-id .ltr,
+  .crm-status { font-size: 14px; }
+  .bento-chat { gap: 6px; }
+  .bento-chat .bubble { padding: 8px 10px; }
+  .ticket, .crm { padding: 12px; }
+  .crm-av { width: 32px; height: 32px; font-size: 14px; }
+
+  #how { padding-block: 36px 28px; }
+  #how .section-head { margin-block-end: 16px; }
+  #how .how-timeline { display: none; }
+  #how .how-steps {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-inline-start: 36px;
+  }
+  #how .how-steps::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 13px;
+    top: 18px;
+    bottom: 18px;
+    width: 2px;
+    background: rgba(78, 205, 196, 0.45);
+  }
+  #how .how-cube {
+    padding: 14px 14px 12px;
+  }
+  #how .how-cube .step-num {
+    top: 16px;
+    left: auto;
+    right: auto;
+    inset-inline-start: -36px;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    transform: none;
+    background: var(--bg);
+    z-index: 2;
+  }
+  #how .how-viz,
+  #how .how-viz-wave { min-height: 0; padding: 10px 12px; margin-block-end: 8px; }
+  #how .how-wave { height: 40px; }
+  #how .how-cube h3 { font-size: 1.05rem; margin-block: 0 6px; }
+  #how .how-note { margin-block-start: 16px; }
+  #how .mid-cta.how-cta { margin-block-start: 20px; }
+
+  .section-pricing { overflow-x: clip; padding-block: 32px 28px; }
+  .section-pricing .plans {
+    direction: ltr;
+    grid-auto-columns: min(84vw, 320px);
+    gap: 12px;
+    margin-inline: 0;
+    padding-inline: max(16px, calc((100% - min(84vw, 320px)) / 2));
+    scroll-padding-inline: max(16px, calc((100% - min(84vw, 320px)) / 2));
+  }
+  .section-pricing .plan {
+    direction: rtl;
+    scroll-snap-align: center;
+    width: 100%;
+  }
+  .plans-swipe {
+    display: block;
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .mobile-cta {
+    padding: 8px var(--gutter-x) calc(8px + env(safe-area-inset-bottom));
+  }
+  .mobile-cta .btn,
+  body:has(.home-frame) .mobile-cta .btn-primary {
+    height: 44px;
+    min-height: 44px;
+  }
+  body.has-mobile-cta { padding-bottom: calc(60px + env(safe-area-inset-bottom)); }
+}
